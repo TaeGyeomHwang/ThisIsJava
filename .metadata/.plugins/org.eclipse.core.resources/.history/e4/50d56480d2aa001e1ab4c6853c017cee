@@ -1,0 +1,12 @@
+package ch3;
+
+public class EqualExam {
+
+	public static void main(String[] args) {
+		int a = 3;
+		String str = new String("abc");
+		System.out.println(a==3);
+		System.out.println(str=="abc");
+	}
+
+}

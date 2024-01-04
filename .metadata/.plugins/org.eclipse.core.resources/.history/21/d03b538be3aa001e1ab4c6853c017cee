@@ -1,0 +1,31 @@
+package ch4;
+
+import java.util.*;
+
+public class DiceGame {
+
+	public static void main(String[] args) {
+		int prize = 0;
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.printf("첫 번째 주사위를 굴리시겠습니까? -> ");
+		scan.nextLine();
+		int dice1 = (int) Math.random() * 6 +1;
+		System.out.println("첫 번째 주사위 값 : [" + dice1 + "]");
+		
+		System.out.printf("두 번째 주사위를 굴리시겠습니까? -> ");
+		scan.nextLine();
+		int dice2 = (int) Math.random() * 6 +1;
+		System.out.println("두 번째 주사위 값 : [" + dice2 + "]");
+		
+		System.out.printf("세 번째 주사위를 굴리시겠습니까? -> ");
+		scan.nextLine();
+		int dice3 = (int) Math.random() * 6 +1;
+		System.out.println("세 번째 주사위 값 : [" + dice3 + "]");
+		
+		if(dice1==dice2 && dice2==dice3) {
+			return ;
+		}
+	}
+
+}

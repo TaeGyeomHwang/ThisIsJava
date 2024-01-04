@@ -1,0 +1,11 @@
+package ch4;
+
+import java.util.*;
+
+public class YearCalculator {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+	}
+
+}

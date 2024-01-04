@@ -1,0 +1,20 @@
+package ch4;
+
+import java.util.*;
+
+public class DiceGame {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("첫 번째 주사위를 굴리시겠습니까? -> ");
+		
+		int dice1 = (int) Math.random() * 6 +1;
+		int dice2 = (int) Math.random() * 6 +1;
+		int dice3 = (int) Math.random() * 6 +1;
+		
+		if(dice1==dice2 && dice2==dice3) {
+			return
+		}
+	}
+
+}
