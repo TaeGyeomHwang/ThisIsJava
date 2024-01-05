@@ -17,23 +17,23 @@ public class DiceGame {
 
 		System.out.printf("두 번째 주사위를 굴리시겠습니까? -> ");
 		scan.nextLine();
-		int dice2 = (int) (Math.random() * 6) + 1;
+		int dice2 = (int) Math.random() * 6 + 1;
 		System.out.println("두 번째 주사위 값 : [" + dice2 + "]");
 
 		System.out.printf("세 번째 주사위를 굴리시겠습니까? -> ");
 		scan.nextLine();
-		int dice3 = (int) (Math.random() * 6) + 1;
+		int dice3 = (int) Math.random() * 6 + 1;
 		System.out.println("세 번째 주사위 값 : [" + dice3 + "]");
 
 		// 만약 주사위 3개가 같다면
 		if (dice1 == dice2 && dice2 == dice3 && dice1 == dice3) {
 			prize = 10000 + dice1 * 1000;
-		}
+		} 
 		// 주사위 3개가 다 다르다면
 		else if (dice1 != dice2 && dice2 != dice3 && dice1 != dice3) {
 			prize = (Math.max(dice1, (Math.max(dice2, dice3)) * 100));
-		}
-		// 주사위가 2개만 같다면
+		} 
+		//주사위가 2개만 같다면
 		else {
 			if (dice1 == dice2) {
 				maxDice = dice1;

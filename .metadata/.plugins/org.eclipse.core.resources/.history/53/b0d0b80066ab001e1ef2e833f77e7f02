@@ -17,12 +17,12 @@ public class DiceGame {
 
 		System.out.printf("두 번째 주사위를 굴리시겠습니까? -> ");
 		scan.nextLine();
-		int dice2 = (int) (Math.random() * 6) + 1;
+		int dice2 = (int) Math.random() * 6 + 1;
 		System.out.println("두 번째 주사위 값 : [" + dice2 + "]");
 
 		System.out.printf("세 번째 주사위를 굴리시겠습니까? -> ");
 		scan.nextLine();
-		int dice3 = (int) (Math.random() * 6) + 1;
+		int dice3 = (int) Math.random() * 6 + 1;
 		System.out.println("세 번째 주사위 값 : [" + dice3 + "]");
 
 		// 만약 주사위 3개가 같다면
