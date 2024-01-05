@@ -1,0 +1,30 @@
+package ch4;
+
+import java.util.*;
+
+public class Pass {
+	public static void main(String[] args) {
+
+		//	출입증 입력
+		Scanner scan = new Scanner(System.in);
+		System.out.printf("출입증에 표기된 호수를 입력하세요 --> ");
+		int input = scan.nextInt();
+		
+		System.out.println("출입 가능한 연구실 :");
+		//	각각의 케이스에 대한 출력
+		switch(input) {
+			case 101:
+				System.out.println("1. 101호");
+			case 102:
+				System.out.println("1. 101호\n2. 102호");
+			case 103:
+				System.out.println("1. 101호\n2. 102호\n3. 103호");
+			case 201:
+				System.out.println("1. 101호\n2. 102호\n3. 103호\n4. 201호");
+			case 202:
+				System.out.println("1. 101호\n2. 102호\n3. 103호\n4. 201호\n5. 202호");
+			case 301:
+				System.out.println("1. 101호\n2. 102호\n3. 103호\n4. 201호\n5. 202호\n6. 301호");
+		}
+	}
+}

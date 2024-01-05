@@ -1,0 +1,17 @@
+package ch4;
+
+import java.util.*;
+
+public class ReadingKing {
+
+	public static void main(String[] args) {
+		//	책 수 입력
+		Scanner scan = new Scanner(System.in);
+		int input = scan.nextInt();
+		
+		//	10권 미만?
+		//	10권 이상 20권 미만?
+		//	30권 이상?
+	}
+
+}

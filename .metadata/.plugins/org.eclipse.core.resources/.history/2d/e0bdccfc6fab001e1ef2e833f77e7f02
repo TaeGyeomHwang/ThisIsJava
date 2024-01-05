@@ -1,0 +1,15 @@
+package ch4;
+
+import java.util.*;
+
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.printf("수를 입력해주세요 --> ");
+		//	수 입력
+		input = scan.nextInt();
+		//	피보너치 수열 출력
+	}
+
+}

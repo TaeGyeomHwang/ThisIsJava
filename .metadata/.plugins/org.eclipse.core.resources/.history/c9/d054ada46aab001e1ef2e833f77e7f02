@@ -1,0 +1,14 @@
+package ch4;
+
+public class BillCalculator {
+
+	public static void main(String[] args) {
+		//	구매금액 입력
+		//	30만원 이상 구매?
+		//	할인액 설정
+		//	30만원 미만 10만원 이상 구매?
+		//	청구금액 = 구매금액 - 할인액
+		//	구매금액, 할인액, 청구금액 출력
+	}
+
+}
