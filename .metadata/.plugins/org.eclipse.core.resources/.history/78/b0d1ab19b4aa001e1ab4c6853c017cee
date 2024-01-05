@@ -1,7 +1,0 @@
-package thisisjava;
-
-public class Hello {
-	public static void main(String[] args) {
-		System.out.printf("%d %s %f", 100, "str", 123.456789);
-	}
-}

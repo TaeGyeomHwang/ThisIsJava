@@ -1,9 +1,0 @@
-package thisisjava;
-
-public class Hello {
-	public static void main(String[] args) {
-		String a = "10";
-		a = Long.parseLong(a);
-		System.out.println(a);
-	}
-}
