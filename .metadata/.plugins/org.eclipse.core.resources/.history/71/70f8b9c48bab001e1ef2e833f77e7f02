@@ -1,0 +1,14 @@
+package ch4;
+
+import java.util.*;
+
+public class Equation {
+	public static void main(String[] args) {
+		//	a, b, c값 입력
+		Scanner scan = new Scanner(System.in);
+		System.out.printf("a값을 입력하세요 --> ");
+		//	조건 만족하는 x값 찾기
+		//	조건 만족하는 y값 찾기
+		//	(x,y) 출력
+	}
+}

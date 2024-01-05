@@ -1,0 +1,7 @@
+package ch4;
+
+public class MoneyCalc {
+	public static void main(String[] args) {
+		int moneyLeft = 10000;
+	}
+}

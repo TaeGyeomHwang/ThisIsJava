@@ -1,0 +1,21 @@
+package ch4;
+
+import java.util.*;
+
+public class Bank {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		//	현재 금액 선언
+		int input = 0;
+		int currentMoney = 0;
+		
+		//	조건> do-while문 사용
+		do {
+			//	사용자 입력
+			// 조건: 
+		}while(input==4);
+	}
+
+}

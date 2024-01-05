@@ -1,0 +1,9 @@
+package ch4;
+
+import java.util.*;
+
+public class Equation {
+	public static void main(String[] args) {
+		
+	}
+}
