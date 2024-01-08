@@ -1,0 +1,15 @@
+package ch05;
+
+public class SubstringExam {
+
+	public static void main(String[] args) {
+		String subject = "자바 프로그래밍";
+		System.out.println(subject.substring(3));
+		System.out.println(subject.substring(0,2));
+		System.out.println(subject.indexOf("프로그래밍"));
+		if(index != -1) {
+			System.out.println();
+		}
+	}
+
+}

@@ -1,9 +1,0 @@
-package thisisjava;
-
-import java.util.*;
-
-public class Hello {
-	public static void main(String[] args) {		
-		System.out.printf("상품의 가격: %d원",123);
-	}
-}

@@ -1,0 +1,11 @@
+package ch05;
+
+public class CharAtExam {
+
+	public static void main(String[] args) {
+		String ssn = "9506241230123";
+		char gender = ""
+		
+	}
+
+}

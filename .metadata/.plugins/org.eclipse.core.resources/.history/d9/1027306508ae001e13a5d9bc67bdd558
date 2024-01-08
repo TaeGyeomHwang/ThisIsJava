@@ -1,0 +1,21 @@
+package ch05;
+
+import java.util.Calendar;
+
+public class WeekExample {
+
+	public static void main(String[] args) {
+		Week today = null;
+		
+		Calendar cal = Calendar.getInstance();	//	런타임 중 Calendar 라는 객체는 반드시 하나만 존재해야 하므로 new를 써서 생성하지 않음
+		
+		int week = cal.get(Calendar.DAY_OF_WEEK);
+		
+		switch(week) {
+			case 1:
+			case 2:
+		}
+
+	}
+
+}

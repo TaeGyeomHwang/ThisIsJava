@@ -1,0 +1,10 @@
+package ch05;
+
+public class ForEach {
+
+	public static void main(String[] args) {
+		String[] = {"자바", "파이썬", "리액트", "AWS"};
+
+	}
+
+}
