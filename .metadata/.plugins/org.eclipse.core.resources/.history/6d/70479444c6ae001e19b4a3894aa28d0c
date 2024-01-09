@@ -1,0 +1,11 @@
+package ch06;
+
+public class CarExam {
+
+	public static void main(String[] args) {
+		//	자동차 인스턴스 생성
+		Car myCar= new Car();
+
+	}
+
+}

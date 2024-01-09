@@ -1,0 +1,8 @@
+package ch06;
+
+public class car {
+	String model;
+	int speed;
+	boolean start;
+	
+}
