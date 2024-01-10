@@ -1,0 +1,10 @@
+package ch06.example;
+
+public class MyPoint {
+	int x;
+	int y;
+	
+	public MyPoint(int x, int y) {
+		
+	}
+}

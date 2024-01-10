@@ -1,0 +1,9 @@
+package ch06.example;
+
+public class Height {
+	int classNum;
+	int studentNum;
+	String name;
+	String height;
+	
+}

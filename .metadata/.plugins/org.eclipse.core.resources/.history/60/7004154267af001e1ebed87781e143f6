@@ -1,0 +1,6 @@
+package ch02;
+
+public class Car {
+	ch06.Car car =
+	New ch06.Car;
+}

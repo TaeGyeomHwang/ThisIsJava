@@ -1,0 +1,13 @@
+package ch06.example;
+
+public class Exercise6_6 {
+
+	static double getDistance(int x, int y, int x1, int y1) {
+		return Math.pow(x - x1, x - x1);
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

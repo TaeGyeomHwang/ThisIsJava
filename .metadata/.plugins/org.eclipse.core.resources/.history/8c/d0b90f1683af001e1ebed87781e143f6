@@ -1,0 +1,7 @@
+package ch06.example;
+
+public class Mytv {
+	boolean isPowerOn;
+	int channel;
+	int volume;
+}

@@ -19,5 +19,9 @@ public class Hello {
 //		byte byteValue = 10;
 //		byte result = byteValue + byteValue;
 //		안된다.
+		
+		ch06.Car.printGas();
+		ch06.Car car = new ch06.Car();
+//		car.speed = 6;
 	}
 }

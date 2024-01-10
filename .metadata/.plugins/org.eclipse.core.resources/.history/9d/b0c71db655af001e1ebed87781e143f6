@@ -1,0 +1,12 @@
+package ch06;
+
+public class CarExam2 {
+
+	public static void main(String[] args) {
+		Car car1 = new Car();	//	인스턴스 객체 2개 생성
+		Car car2 = new Car();
+
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package ch06.example;
+
+public class Mytv {
+	boolean isPowerOn;
+	int channel;
+	int volume;
+	
+	final int MAX_VOLUME = 100;
+}

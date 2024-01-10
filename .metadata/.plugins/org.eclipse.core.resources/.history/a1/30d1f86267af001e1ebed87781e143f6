@@ -1,0 +1,5 @@
+package ch02;
+
+public class Car {
+	ch06.Car car = new ch06.Car();
+}

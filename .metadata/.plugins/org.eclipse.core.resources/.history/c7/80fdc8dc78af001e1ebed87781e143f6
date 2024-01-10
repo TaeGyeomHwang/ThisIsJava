@@ -1,0 +1,28 @@
+package ch06.example;
+
+public class Student {
+	String name;
+	int ban;
+	int no;
+	int kor;
+	int eng;
+	int math;
+
+	Student() {
+		this.name = name;
+		this.ban = ban;
+		this.no = no;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+
+	public int getTotal() {
+		return kor + eng + math;
+	}
+
+	public float getAverage() {
+		System.out.println(Math.round((float)(kor + eng + math)/3.0));
+		return (Math.round((float)(kor + eng + math) / 3.0) * 100) / 100;
+	}
+}
