@@ -11,6 +11,8 @@ public class Student1Practice {
 		System.out.printf("학급 수를 입력하세요 --> ");
 		int classNum = scan.nextInt();
 		// 입력받은 수만큼 총 학급 수 설정
+		// 객체의 배열을 생성 시 객체 자체가 아닌 객체를 참조하는 배열이 생성됨.
+		// 따라서 student 인스턴스는 Student1 객체의 배열에 대한 참조를 담을 수 있는 배열을 생성한 것.
 		Student1[][] student = new Student1[classNum][];
 
 		// 학급 수 만큼 학생 키 설정
