@@ -1,0 +1,9 @@
+package ch07;
+
+public sealed class People permits Employee, Manager{
+	public String name;
+	
+	public void work() {
+		
+	}
+}

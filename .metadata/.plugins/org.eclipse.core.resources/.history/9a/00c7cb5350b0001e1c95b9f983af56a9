@@ -1,0 +1,14 @@
+package ch07;
+
+public class StudentExam {
+
+	public static void main(String[] args) {
+		Person p = new Person("홍길동");
+		
+		personInfo(){
+			
+		}
+
+	}
+
+}

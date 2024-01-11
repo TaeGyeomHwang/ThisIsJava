@@ -1,0 +1,14 @@
+package ch07;
+
+class A {}
+class B extends A{}
+class C extends A{}
+class D extends B{}
+class E extends C{}
+
+public class PromotionExam {
+	public static void main(String[] args) {
+		B b = new B();
+		C c = new C();
+	}
+}

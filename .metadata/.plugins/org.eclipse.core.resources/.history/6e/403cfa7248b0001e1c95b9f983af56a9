@@ -1,0 +1,15 @@
+package ch07;
+
+public class ChildExam {
+
+	public static void main(String[] args) {
+		Child child = new Child();
+		Parent parent = child;	//	자동 타입 변환 - 참조 타입만 parent로 바꿨다.
+		
+		parent.method1();
+		parent.method2();	//	child에서 오버라이딩한 메소드가 실행된다.
+		parent.method3();
+
+	}
+
+}

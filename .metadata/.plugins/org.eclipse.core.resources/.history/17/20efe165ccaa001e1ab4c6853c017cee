@@ -1,9 +1,0 @@
-package ch3;
-
-public class AddTest {
-	
-	int a = 1;
-	int b = 2;
-	int c = a++;
-	System.out.println("");
-}

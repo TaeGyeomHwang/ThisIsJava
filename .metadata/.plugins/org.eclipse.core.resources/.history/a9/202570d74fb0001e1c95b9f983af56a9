@@ -1,0 +1,9 @@
+package ch07;
+
+public class Person {
+	public String name;
+	
+	public Person(String name) {
+		
+	}
+}

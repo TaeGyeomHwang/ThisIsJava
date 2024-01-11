@@ -1,0 +1,13 @@
+package ch07;
+
+public class B {
+	
+	public void method() {
+		
+	}
+	public static void main(String[] args) {
+
+
+	}
+
+}

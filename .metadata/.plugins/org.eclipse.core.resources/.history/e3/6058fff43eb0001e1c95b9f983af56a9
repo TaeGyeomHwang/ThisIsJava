@@ -1,0 +1,14 @@
+package ch07;
+
+public class CalculatorExam {
+
+	public static void main(String[] args) {
+		int r = 10;
+		
+		Calculator cal = new Calculator();
+		
+		cal.areaCircle(r);
+
+	}
+
+}

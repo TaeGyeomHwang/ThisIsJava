@@ -1,0 +1,7 @@
+package ch07;
+
+public class Airplane {
+	public void land() {
+		
+	}
+}

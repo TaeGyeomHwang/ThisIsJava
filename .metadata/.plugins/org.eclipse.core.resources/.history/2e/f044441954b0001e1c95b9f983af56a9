@@ -1,0 +1,5 @@
+package ch07;
+
+public sealed class People permits Employee, Manager{
+	
+}

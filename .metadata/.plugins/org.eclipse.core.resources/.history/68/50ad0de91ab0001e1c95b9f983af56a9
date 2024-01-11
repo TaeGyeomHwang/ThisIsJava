@@ -1,0 +1,27 @@
+package ch06.practice;
+
+public class Account {
+	int balance = 0;
+	int accountNum;
+	String name;
+	int money;
+
+	static final int MIN_BALANCE = 0;
+	static final int MAX_BALANCE = 1000000;
+
+	Account(){
+		
+	}
+	
+	public int getBalance() {
+		return this.balance;
+	}
+
+	public int setBalance(int balance) {
+		if(balance>=0 && balance<=1000000) {
+			return this.balance = balance;
+		}else {
+			return -1;
+		}
+	}
+}

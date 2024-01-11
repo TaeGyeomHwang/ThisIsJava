@@ -1,0 +1,13 @@
+package ch07;
+
+public class SmartPhone extends Phone{
+	public boolean wifi;
+	
+	public SmartPhone() {
+		
+	}
+	public void setWifi(boolean wifi) {
+		this.wifi = wifi;
+		System.out.println("");
+	}
+}

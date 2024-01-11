@@ -1,0 +1,17 @@
+package ch07;
+
+public class AirplaneExam {
+
+	public static void main(String[] args) {
+		SupersonicAirplane sa = new SupersonicAirplane();
+		
+		sa.takeOff();
+		sa.fly();
+		sa.flyMode = FlyMode.SUPERSONIC;
+		sa.fly();
+		sa.flyMode = FlyMode.NORMAL;
+		sa.fly();
+		sa.land();
+	}
+
+}

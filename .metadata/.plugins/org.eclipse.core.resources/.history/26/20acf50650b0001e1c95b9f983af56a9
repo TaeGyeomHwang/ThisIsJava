@@ -1,0 +1,9 @@
+package ch07;
+
+public class Student extends Person{
+	public Student(String name) {
+	}
+
+	public int studentNo;
+	
+}
