@@ -1,0 +1,9 @@
+package ch08.example.exam4;
+
+public class Student {
+
+	public Student(int quiz, int midterm, int finalterm) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

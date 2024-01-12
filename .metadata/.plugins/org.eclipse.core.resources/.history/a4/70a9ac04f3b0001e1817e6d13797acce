@@ -1,0 +1,17 @@
+package ch08;
+
+public class ImplClass implements InterfaceC{
+
+	@Override
+	public void methodB() {
+	}
+
+	@Override
+	public void methodA() {
+	}
+
+	@Override
+	public void methodC() {
+	}
+	
+}

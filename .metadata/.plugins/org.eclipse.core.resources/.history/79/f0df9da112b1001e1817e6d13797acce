@@ -1,0 +1,53 @@
+package ch08.example;
+
+public class Car extends Vehicle {
+	int cc;
+
+	public Car(String name, int price, int cc) {
+		this.name = name;
+		this.price = price;
+		this.cc = cc;
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public int getPrice() {
+		return this.price;
+	}
+
+	@Override
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	public int getCc() {
+		return this.cc;
+	}
+	
+	public void setCc(int cc) {
+		this.cc = cc;
+	}
+
+	@Override
+	public void getInfo() {
+		System.out.println("모델명: " + getName() + "가격: " + getPrice() + "배기량: " + getCc());
+	}
+
+	@Override
+	public Double calcTax() {
+		double tax = 0.0;
+		
+		
+		return tax;
+	}
+
+}

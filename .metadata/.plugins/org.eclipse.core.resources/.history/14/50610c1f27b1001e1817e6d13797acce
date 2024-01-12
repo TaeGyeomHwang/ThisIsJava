@@ -1,0 +1,21 @@
+package ch08.example.exam4;
+
+import java.util.*;
+
+public class StudentDriver {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		Student[] student = {"선남",""};
+		
+		System.out.println(studentNameArr[0]+"의 퀴즈 점수를 입력하라: ");
+		int quiz1 = Integer.parseInt(scan.nextLine());
+		System.out.println(studentNameArr[0]+"의 중간시험 점수를 입력하라: ");
+		int midterm1 = Integer.parseInt(scan.nextLine());
+		System.out.println(studentNameArr[0]+"의 기말시험 점수를 입력하라: ");
+		int finalExam1 = Integer.parseInt(scan.nextLine());
+		
+		System.out.println();
+	}
+
+}

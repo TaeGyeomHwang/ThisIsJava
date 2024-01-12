@@ -1,0 +1,7 @@
+package ch08;
+
+//	tv 클래스와 audio 클래스의 사용법을 알려주는 것.
+public interface RemoteControl {
+
+	public void turnOn();
+}

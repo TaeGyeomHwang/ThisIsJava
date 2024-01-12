@@ -1,0 +1,22 @@
+package ch08.example.exam2;
+
+import ch08.example.exam1.Vehicle;
+
+public class TaxCal {
+
+	public static void main(String[] args) {
+		TaxPayer geunro = new TaxPayer("선남", 100, 3000000);
+		System.out.println(geunro.getInfo());
+		System.out.println("세금: " + calculate(geunro));
+		
+		TaxPayer saup = new TaxPayer("선남", 100, 3000000);
+		System.out.println(saup.getInfo());
+		System.out.println("세금: " + calculate(saup));
+		
+	}
+	
+	private static double calculate(TaxPayer t) {
+		return t.calcTax();
+	}
+
+}

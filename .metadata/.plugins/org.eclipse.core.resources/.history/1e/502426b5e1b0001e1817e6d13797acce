@@ -1,0 +1,17 @@
+package ch08;
+
+public class RemoteConExam {
+
+	public static void main(String[] args) {
+		//	인터페이스 타입은 그 구현 클래스를 모두 담을 수 있음
+		//	그 타입에 명시된 메서드만 visible
+		RemoteControl rc;
+		
+		rc = new Television();
+		rc.turnOn();
+		
+		rc= new Audio();
+		rc.turnOn();
+	}
+
+}

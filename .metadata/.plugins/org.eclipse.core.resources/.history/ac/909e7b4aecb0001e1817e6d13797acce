@@ -1,0 +1,13 @@
+package ch08;
+
+public class MultipleInterfaceImplExample {
+
+	public static void main(String[] args) {
+		RemoteCon rc = new SmartTelevision();
+		rc.turnOn();
+		rc.turnOff();
+		
+		Searchable searchable = new SmartTelevision();
+	}
+
+}

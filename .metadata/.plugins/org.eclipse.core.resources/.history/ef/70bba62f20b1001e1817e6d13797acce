@@ -1,0 +1,43 @@
+package ch08.example.exam3;
+
+import java.util.*;
+
+public class DogDriver {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("개의 이름을 입력하세요: ");
+		String name1 = scan.nextLine();
+		System.out.println("개의 나이를 입력하세요: ");
+		int age1 = Integer.parseInt(scan.nextLine());
+		System.out.println("개의 품종을 입력하세요: ");
+		String breed1 = scan.nextLine();
+		System.out.println("예방주사를 맞았나요(예 혹은 아니오)?: ");
+		String vaccine1 = scan.nextLine();
+
+		Pet pet1 = new Dog(name1, age1, breed1, vaccine1);
+
+		System.out.println("개의 이름을 입력하세요: ");
+		String name2 = scan.nextLine();
+		System.out.println("개의 나이를 입력하세요: ");
+		int age2 = Integer.parseInt(scan.nextLine());
+		System.out.println("개의 품종을 입력하세요: ");
+		String breed2 = scan.nextLine();
+		System.out.println("예방주사를 맞았나요(예 혹은 아니오)?: ");
+		String vaccine2 = scan.nextLine();
+		
+		Pet pet2 = new Dog(name1, age1, breed1, vaccine1);
+
+		System.out.println(pet1.getInfo());
+		System.out.println(pet2.getInfo());
+		
+		System.out.println("다음 개들은 두 살이 넘었으나 예방주사를 맞지 않았다:");
+		System.out.println(calculate(pet1));
+	}
+
+	private static String calculate(Pet p) {
+		return p.isVaccinated();
+	}
+
+}

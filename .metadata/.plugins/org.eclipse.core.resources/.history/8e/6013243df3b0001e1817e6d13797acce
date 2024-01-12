@@ -1,0 +1,11 @@
+package ch08;
+
+public class SealedExample {
+
+	public static void main(String[] args) {
+		ImplClass impl = new ImplClass();
+		
+		InterfaceA ia = impl;
+	}
+
+}

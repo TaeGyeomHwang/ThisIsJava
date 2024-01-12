@@ -1,0 +1,37 @@
+package ch08.example;
+
+public class Truck extends Vehicle {
+
+	public Truck(String string, int i, double d) {
+		
+	}
+
+	@Override
+	public String getName() {
+		return null;
+	}
+
+	@Override
+	public void setName(String name) {
+	}
+
+	@Override
+	public int getPrice() {
+		return 0;
+	}
+
+	@Override
+	public void setPrice(int price) {
+	}
+
+	@Override
+	public void getInfo() {
+		return null;
+	}
+
+	@Override
+	public Double calcTax() {
+		return null;
+	}
+
+}

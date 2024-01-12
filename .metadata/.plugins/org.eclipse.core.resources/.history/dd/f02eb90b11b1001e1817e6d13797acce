@@ -1,0 +1,37 @@
+package ch08.example;
+
+public class Truck extends Vehicle {
+
+	public Truck(String string, int i, double d) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String getName() {
+		return null;
+	}
+
+	@Override
+	public void setName() {
+	}
+
+	@Override
+	public int getPrice() {
+		return 0;
+	}
+
+	@Override
+	public void setPrice() {
+	}
+
+	@Override
+	public String getInfo() {
+		return null;
+	}
+
+	@Override
+	public Double calcTax() {
+		return null;
+	}
+
+}

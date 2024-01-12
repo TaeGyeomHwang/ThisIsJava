@@ -1,0 +1,7 @@
+package ch08;
+
+public interface Service {
+	default void defaultMethod1() {
+		
+	}
+}

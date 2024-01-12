@@ -1,0 +1,9 @@
+package ch08.example.exam3;
+
+public class Dog extends Pet {
+
+	public Dog(String name1, int age1, String breed1, String vaccine1) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,41 @@
+package ch08.example;
+
+public class Car extends Vehicle {
+	int cc;
+
+	public Car(String name, int price, int cc) {
+		this.name = name;
+		this.price = price;
+		this.cc = cc;
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public int getPrice() {
+		return 0;
+	}
+
+	@Override
+	public void setPrice(int price) {
+	}
+
+	@Override
+	public String getInfo() {
+		return null;
+	}
+
+	@Override
+	public Double calcTax() {
+		return null;
+	}
+
+}

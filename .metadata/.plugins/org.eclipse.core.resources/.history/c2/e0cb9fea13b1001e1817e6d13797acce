@@ -1,0 +1,50 @@
+package ch08.example;
+
+public class Truck extends Vehicle {
+	int weight;
+
+	public Truck(String name, int price, int weight) {
+		this.name = name;
+		this.price = price;
+		this.weight = weight;
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public int getPrice() {
+		return this.price;
+	}
+
+	@Override
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	public int getWeight() {
+		return this.weight;
+	}
+
+	public void setCc(int weight) {
+		this.weight = weight;
+	}
+
+	@Override
+	public String getInfo() {
+		return "\"모델명: \" + getName() + \"가격: \" + getPrice() + \"적재 중량: \" + getWeight()";
+	}
+
+	@Override
+	public Double calcTax() {
+		return null;
+	}
+
+}
