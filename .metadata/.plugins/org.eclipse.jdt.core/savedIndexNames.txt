@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 INDEX VERSION 1.134+E:\github\ThisIsJava\.metadata\.plugins\org.eclipse.jdt.core
+=======
+INDEX VERSION 1.134+C:\workspace\.metadata\.plugins\org.eclipse.jdt.core
+3632036696.index
+163077453.index
+>>>>>>> parent of 9fae1f0 (20240115)
 3413725848.index
 1865797976.index
 3704190004.index

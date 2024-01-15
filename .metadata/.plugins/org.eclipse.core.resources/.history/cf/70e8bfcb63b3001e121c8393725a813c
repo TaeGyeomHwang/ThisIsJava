@@ -1,0 +1,11 @@
+package runnableJarExam;
+
+public class RunJarExam {
+
+	public static void main(String[] args) {
+		public static String silHang() {
+			return "연습 코드 출력";
+		}
+	}
+
+}
