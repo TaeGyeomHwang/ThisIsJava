@@ -1,0 +1,7 @@
+package runnableJarExam;
+
+public class RunJarExam {
+	public Static String silHaeng() {
+		return "";
+	}
+}
