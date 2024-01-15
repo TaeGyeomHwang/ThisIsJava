@@ -1,7 +1,0 @@
-package ch06.example;
-
-public class Height {
-	String name;
-	String height;
-	
-}

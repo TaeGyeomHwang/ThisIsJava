@@ -1,9 +1,0 @@
-package runnableJarExam;
-
-public class RunJarExam {
-
-	public static void main(String[] args) {
-
-	}
-
-}

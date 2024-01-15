@@ -1,7 +1,0 @@
-package ch07;
-
-public class Calculator {
-	public double areaCircle(double r) {
-		return 3.14 * r * r;
-	}
-}

@@ -1,5 +1,0 @@
-package ch07;
-
-public final class Employee extends People{
-	
-}

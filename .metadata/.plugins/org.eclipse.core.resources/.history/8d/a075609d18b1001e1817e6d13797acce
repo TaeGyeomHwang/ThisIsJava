@@ -1,6 +1,0 @@
-package ch08.example.exam2;
-
-public class TaxPayer {
-	String name;
-	int num;
-}

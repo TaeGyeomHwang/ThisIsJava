@@ -1,9 +1,0 @@
-package ch08.pratice;
-
-public class DaoExample {
-
-	public static void main(String[] args) {
-
-	}
-
-}

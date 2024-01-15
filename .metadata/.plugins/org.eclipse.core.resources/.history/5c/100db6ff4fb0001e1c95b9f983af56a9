@@ -1,6 +1,0 @@
-package ch07;
-
-public class Student extends Person{
-	public int studentNo;
-	
-}

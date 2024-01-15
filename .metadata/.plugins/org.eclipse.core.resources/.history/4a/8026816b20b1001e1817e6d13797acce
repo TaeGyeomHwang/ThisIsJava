@@ -1,8 +1,0 @@
-package ch08.example.exam3;
-
-public abstract class Pet {
-	String name;
-	int age;
-	
-	
-}

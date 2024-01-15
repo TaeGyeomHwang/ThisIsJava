@@ -1,8 +1,0 @@
-package ch07;
-
-public class Child {
-	@Override
-	public void method2() {
-		System.out.println("child의 method2 입니다.");
-	}
-}

@@ -1,7 +1,0 @@
-package ch07;
-
-public class PromotionExam {
-	public static void main(String[] args) {
-	
-	}
-}

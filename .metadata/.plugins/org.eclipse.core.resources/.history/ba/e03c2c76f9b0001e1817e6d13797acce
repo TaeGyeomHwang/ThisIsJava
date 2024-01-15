@@ -1,5 +1,0 @@
-package ch08.pratice;
-
-public class OracleDao implements DataAccessObject{
-
-}

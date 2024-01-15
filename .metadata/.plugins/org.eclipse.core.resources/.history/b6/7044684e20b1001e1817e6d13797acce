@@ -1,5 +1,0 @@
-package ch08.example.exam3;
-
-public class Dog extends Pet {
-
-}

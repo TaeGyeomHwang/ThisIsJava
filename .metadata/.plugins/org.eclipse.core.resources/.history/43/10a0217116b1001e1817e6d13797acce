@@ -1,9 +1,0 @@
-package ch08.example.exam2;
-
-public class TaxPayer {
-
-	public static void main(String[] args) {
-
-	}
-
-}
