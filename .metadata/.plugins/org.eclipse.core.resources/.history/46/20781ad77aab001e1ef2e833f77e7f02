@@ -1,9 +1,0 @@
-package ch4;
-
-import java.util.*;
-
-public class Pass {
-	public static void main(String[] args) {
-
-	}
-}
