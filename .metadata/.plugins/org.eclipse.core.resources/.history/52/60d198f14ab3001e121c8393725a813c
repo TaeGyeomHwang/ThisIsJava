@@ -1,0 +1,7 @@
+package ch09;
+
+public interface RemoteControl {
+	//	구현할 객체의 사용법
+	void turnOn();
+	void turnOff();
+}

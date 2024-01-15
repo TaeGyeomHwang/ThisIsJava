@@ -1,0 +1,41 @@
+package ch08.example.exam5;
+
+import java.util.*;
+
+public class ConcertDriver {
+
+	public static final Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String input;
+		Concert concert = new Concert("가수왕", 100, 10000, 20000);
+
+		System.out.println("콘서트 판매 프로그램을 시작합니다.\n");
+
+		while (concert.getIsOnline()) {
+			System.out.println();
+			System.out.println("인터넷 판매이면 S, 현장 판매로 바꾸려면 V, 판매를 종료하려면 F를 입력하세요: ");
+			input = scan.nextLine();
+
+			if (input.equals("S")) {
+				System.out.println("파는 티켓들 수는? <최대" + concert.getCapacity() + "> ");
+				int ticketNum = Integer.parseInt(scan.nextLine());
+
+				if (ticketNum > concert.getCapacity()) {
+					System.out.println("죄송합니다. 판매를 완료할 수 없습니다.");
+					System.out.println("남은 티켓들의 수: " + concert.getCapacity());
+				} else {
+					concert.setTicketNum(ticketNum);
+					concert.setSoldTicket(ticketNum);
+					concert.setCapacity(ticketNum);
+
+					System.out.println("티켓들의 총 가격 = " + concert.getTotalPrice());
+					System.out.println("남은 티켓들의 수: "+concert.getLeftTicket());
+				}
+			}else if(input.equals("V"))
+
+		}
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package ch08.example.exam5;
+
+import java.util.*;
+
+public class ConcertDriver {
+	
+	public static final Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String input;
+		Concert concert = new Concert("가수왕", 100, 10000, 20000);
+		
+		System.out.println("콘서트 판매 프로그램을 시작합니다.\n");
+		
+	}
+
+}

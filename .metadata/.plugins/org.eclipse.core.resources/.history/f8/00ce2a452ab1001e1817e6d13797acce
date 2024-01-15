@@ -1,0 +1,21 @@
+package ch08.example.exam4;
+
+public class Student {
+	String name;
+	int quiz;
+	int midterm;
+	int finalterm;
+
+	public Student(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String calcGrade() {
+		return null;
+	}
+
+	public String calcScore() {
+		return null;
+	}
+
+}

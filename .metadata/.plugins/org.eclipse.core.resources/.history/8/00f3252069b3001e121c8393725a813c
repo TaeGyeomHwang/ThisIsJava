@@ -1,0 +1,17 @@
+package ch11;
+
+public class ExceptionExam1 {
+
+	public static void main(String[] args) {
+		try {
+			int[] a = null;
+			System.out.println(a.length);
+		} catch (NullPointerException e) {
+			System.out.println("배열이 비어있습니다.");
+		} finally {
+			System.out.println("finally 실행");
+		}
+
+	}
+
+}

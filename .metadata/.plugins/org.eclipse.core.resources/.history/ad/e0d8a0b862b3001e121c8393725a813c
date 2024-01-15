@@ -1,0 +1,10 @@
+import lib1.calc;
+
+public class example {
+
+	public static void main(String[] args) {
+//		calc calc = new calc();	//	static 메소드가 아니라면 인스턴스를 생성하고 메소드를 사용해야 한다.
+		System.out.println("5 + 10의 결과 = "+calc.plus(5, 10));
+	}
+
+}

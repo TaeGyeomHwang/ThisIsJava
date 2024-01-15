@@ -1,0 +1,11 @@
+import lib1.calc;
+
+public class example {
+
+	public static void main(String[] args) {
+		calc calc = new calc();
+		System.out.println("5+10의 결과"+calc.plus(5, 10));
+		System.out.println(calc.minus(3, 7));
+	}
+
+}

@@ -1,0 +1,20 @@
+package ch11;
+
+public class ExceptionHandlingExam {
+
+	public static void main(String[] args) {
+		String[] arr = {"100", "1oo"};
+		
+		try {
+			for(String s : arr){
+				System.out.println(s);
+				int value = Integer.parseInt(s);
+			}
+		}catch(NumberFormatException e){
+			System.out.println(e);
+		}
+		
+		
+	}
+
+}

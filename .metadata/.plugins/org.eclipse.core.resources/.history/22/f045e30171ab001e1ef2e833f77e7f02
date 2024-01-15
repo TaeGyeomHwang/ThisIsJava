@@ -1,0 +1,32 @@
+package ch4;
+
+import java.util.*;
+
+public class Fibonacci {
+
+	public static int recursion(int n) {
+		if(n==0)
+			return 0;	// 첫 번째 원소라면
+		else if (n == 1)
+			return 1;	// 두 번째 원소라면
+		else {
+			return recursion(n - 2) + recursion(n - 1);
+		}
+	}
+
+	public static void main(String[] args) {
+		int result = 0;
+
+		Scanner scan = new Scanner(System.in);
+		System.out.printf("수를 입력해주세요 --> ");
+		// 수 입력
+		int input = scan.nextInt();
+
+		// 피보나치 수열 출력
+		for (int i = 1; i <= input; i++) {
+			System.out.print(recursion(i) + " ");
+		}
+
+	}
+
+}

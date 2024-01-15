@@ -1,0 +1,12 @@
+package ch09;
+
+public class RemoteControlImpl implements RemoteControl{
+
+	@Override
+	public void turnOn() {
+	}
+
+	@Override
+	public void turnOff() {
+	}
+}

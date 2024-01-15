@@ -1,0 +1,18 @@
+package ch08.example.exam4;
+
+public class Student {
+	String name;
+
+	public Student(int quiz, int midterm, int finalterm) {
+		this.quiz = quiz;
+	}
+
+	public String calcGrade() {
+		return null;
+	}
+
+	public String calcScore() {
+		return null;
+	}
+
+}

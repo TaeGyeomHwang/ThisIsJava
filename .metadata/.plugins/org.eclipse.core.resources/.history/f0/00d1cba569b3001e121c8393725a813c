@@ -1,0 +1,19 @@
+package ch11;
+
+public class ExceptionExam1 {
+
+	public static void main(String[] args) {
+		try {
+			int[] a = null;
+			System.out.println(a.length);
+		} catch (NullPointerException e) {
+			System.out.println("배열이 비어있습니다.");
+		} catch (Exception e) {	//	catch는 여러 번 사용할 수 있다.
+			System.out.println("예외가 발생했습니다.");
+		}  finally {
+			System.out.println("try catch 문이 종료됩니다.");
+		}
+
+	}
+
+}

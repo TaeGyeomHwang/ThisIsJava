@@ -1,0 +1,10 @@
+package ch09;
+
+public class Home {
+//	RemoteControl rc = new RemoteControlImpl();
+	
+	//	위와 같은 동작을 하는 익명 객체
+	RemoteControl rc = new RemoteControl() {
+		
+	};
+}

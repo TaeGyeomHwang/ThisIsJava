@@ -1,0 +1,10 @@
+import lib1.calc;
+
+public class example {
+
+	public static void main(String[] args) {
+		calc calc = new calc();
+		System.out.println(calc.plus(3, 7););
+	}
+
+}

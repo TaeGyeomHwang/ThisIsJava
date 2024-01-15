@@ -1,0 +1,19 @@
+package ch09;
+
+public class Home {
+	//	기존에는 인터페이스를 구현한 객체를 이용해 인스턴스를 만들었다.
+//	RemoteControl rc = new RemoteControlImpl();
+	
+	//	위와 같은 동작을 하는 익명 객체를 만들 수 있다.
+	RemoteControl rc = new RemoteControl() {
+		@Override
+		public void turnOn() {
+			System.out.println("전원을 켭니다");
+		}
+
+		@Override
+		public void turnOff() {
+			System.out.println("전원을 끕니다");
+		}
+	};
+}

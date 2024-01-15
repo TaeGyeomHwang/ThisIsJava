@@ -1,0 +1,15 @@
+package ch11;
+
+public class ExceptionHandlingExam {
+
+	public static void main(String[] args) {
+		String[] arr = {"100", "1oo"};
+		
+		for(String s : arr){
+			System.out.print(s);
+			int value = Integer.parseInt(s);
+		}
+		
+	}
+
+}

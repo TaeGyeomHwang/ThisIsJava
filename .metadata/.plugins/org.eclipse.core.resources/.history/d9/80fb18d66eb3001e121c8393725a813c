@@ -1,0 +1,43 @@
+package ch11;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class ExceptionHandlingExam {
+
+	public static void main(String[] args) {
+		String[] arr = { "100", "1oo" };
+
+		try {
+//			for(String s : arr){
+//				System.out.println(s);
+//				int value = Integer.parseInt(s);
+//			}
+			for (int i = 0; i <= arr.length; i++) {
+				System.out.println(i);
+				System.out.println(arr[i]);
+//				int value = Integer.parseInt(arr[i]);
+			}
+		} catch (Exception e) {
+			System.out.println("정상적으로 처리할 수 없습니다.");
+		}
+//		} catch (NumberFormatException e) {
+//			System.out.println("숫자가 아닌 것이 포함되어 있습니다.");
+//		} catch (ArrayIndexOutOfBoundsException e) {
+//			System.out.println("배열 인덱스를 초과했습니다.");
+//		}
+		//	catch 블록이 여러개라도 catch 블록은 단 하나만 실행된다.
+		//	처리해야 할 예외 클래스들이 상속관계에 있을 경우 하위 catch 블록을 먼저 작성하고 상위 클래스 catch블록을 나중에 작성해야 한다.
+		
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream("abc.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}finally {
+			fis.close();
+		}
+
+	}
+
+}

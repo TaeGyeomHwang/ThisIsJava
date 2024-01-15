@@ -1,0 +1,34 @@
+package ch11;
+
+public class ExceptionExam2 {
+
+	public static void main(String[] args) {
+		int[] arr1 = {1,2,3,4,5};
+		int[] arr2 = {1,2,3,4,5,6,7,8,9,10};
+		int[] arr3 = null;
+
+		boolean b1 = checkArr(arr1);
+		boolean b2 = checkArr(arr2);
+		boolean b3 = checkArr(arr3);
+		
+		printCheck(b1);
+		printCheck(b2);
+	}
+	
+	public static boolean checkArr(int[] arr) throws NullPointerException{
+		//	배열의 크기가 10보다 크거나 같으면 true를 반환, 그렇지 아니면 false를 반환
+		if(arr.length>=10) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	private static void printCheck(boolean b) {
+		if(b) {
+			System.out.println("배열의 길이가 10보다 크거나 같습니다.");
+		}else {
+			System.out.println("배열의 길이가 10보다 작습니다.");
+		}
+	}
+}

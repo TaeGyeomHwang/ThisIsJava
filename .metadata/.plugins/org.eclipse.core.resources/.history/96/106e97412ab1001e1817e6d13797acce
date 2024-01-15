@@ -1,0 +1,23 @@
+package ch08.example.exam4;
+
+public class Student {
+	String name;
+	int quiz;
+	int midterm;
+	int finalterm;
+
+	public Student(int quiz, int midterm, int finalterm) {
+		this.quiz = quiz;
+		this.midterm = midterm;
+		this.finalterm = finalterm;
+	}
+
+	public String calcGrade() {
+		return null;
+	}
+
+	public String calcScore() {
+		return null;
+	}
+
+}

@@ -1,0 +1,8 @@
+package ch11;
+
+public class ArrayLengthOver extends Exception{
+	ArrayLengthOver(){
+		
+	}
+	
+}

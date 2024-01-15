@@ -1,0 +1,9 @@
+package ch09;
+
+public class Home {
+//	RemoteControl rc = new RemoteControlImpl();
+	
+	RemoteControl rc = new RemoteControl() {
+		
+	}
+}
