@@ -1,0 +1,96 @@
+package ch08.example.exam5;
+
+public class Concert {
+	String name;
+	int capacity;
+	int soldTicket = 0;
+	int priceOnline;
+	int priceOffline;
+	int totalPrice;
+	boolean isOnline = true;
+	int ticketNum;
+	
+	public Concert(String name, int capacity, int priceOnline, int priceOffline) {
+		this.name = name;
+		this.capacity = capacity;
+		this.priceOnline = priceOnline;
+		this.priceOffline = priceOffline;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getCapacity() {
+		return this.capacity;
+	}
+	
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+	
+	public int getSoldTicket() {
+		return this.soldTicket;
+	}
+	
+	public void setSoldTicket(int soldTicket) {
+		this.soldTicket = soldTicket;
+	}
+	
+	public int getPriceOnline() {
+		return this.priceOnline;
+	}
+	
+	public void setPriceOnline(int priceOnline) {
+		this.priceOnline = priceOnline;
+	}
+	
+	public int getPriceOffline() {
+		return this.priceOffline;
+	}
+	
+	public void setPriceOffline(int priceOffline) {
+		this.priceOffline = priceOffline;
+	}
+	
+	public int getTotalPrice() {
+		if(this.getIsOnline()==true) {
+			return this.ticketNum * this.priceOnline;
+		}else {
+			return this.ticketNum * this.priceOffline;
+		}
+		
+	}
+	
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	
+	public boolean getIsOnline() {
+		return this.isOnline;
+	}
+	
+	public void setIsOnline(boolean isOnline) {
+		this.isOnline = isOnline;
+	}
+	public int getLeftTicket() {
+		return this.getCapacity() - this.getSoldTicket();
+	}
+
+	public void onlineSale() {
+
+	}
+
+	public void offlineSale() {
+	}
+
+	public void setTicketNum(int ticketNum) {
+		this.ticketNum= ticketNum;
+	}
+
+
+}
