@@ -21,6 +21,6 @@ public class PromotionExam {
 		B bd = d;
 		C ce = e;
 		
-		B be = e;	//	상속 관계에 있지 않으므로 컴파일 에러 발생
+//		B be = e;	//	상속 관계에 있지 않으므로 컴파일 에러 발생
 	}
 }
