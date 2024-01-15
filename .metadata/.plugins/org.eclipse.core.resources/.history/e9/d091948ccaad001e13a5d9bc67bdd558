@@ -1,9 +1,0 @@
-package ch05;
-
-public class SubstringExam {
-
-	public static void main(String[] args) {
-		String subject = "9506241230123"
-	}
-
-}
