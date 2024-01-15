@@ -23,20 +23,12 @@ public class Concert {
 		return this.name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public int getCapacity() {
 		return this.capacity;
 	}
 
 	public void setCapacity(int ticketNum) {
 		this.capacity -= ticketNum;
-	}
-
-	public int getSoldTicket() {
-		return this.soldTicket;
 	}
 
 	public void setSoldTicket(int ticketNum) {
@@ -47,16 +39,8 @@ public class Concert {
 		return this.priceOnline;
 	}
 
-	public void setPriceOnline(int priceOnline) {
-		this.priceOnline = priceOnline;
-	}
-
 	public int getPriceOffline() {
 		return this.priceOffline;
-	}
-
-	public void setPriceOffline(int priceOffline) {
-		this.priceOffline = priceOffline;
 	}
 
 	public int getTotalPrice() {
@@ -70,10 +54,6 @@ public class Concert {
 			this.finalPrice += totalPrice;
 			return totalPrice;
 		}
-	}
-
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
 	}
 
 	public boolean getIsOnline() {

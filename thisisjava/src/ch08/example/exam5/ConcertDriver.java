@@ -25,18 +25,18 @@ public class ConcertDriver {
 				
 				if(ticketNum>concert.getCapacity()) {
 					System.out.println("죄송합니다. 판매를 완료할 수 없습니다.");
-					System.out.println("남은 티켓들의 수: " + concert.getLeftTicket());
+					System.out.println("남은 티켓들의 수: " + concert.getCapacity());
 				}else {
 					concert.setTicketNum(ticketNum);
 					concert.setSoldTicket(ticketNum);
 					concert.setCapacity(ticketNum);
 					System.out.println("티켓들의 총 가격= "+concert.getTotalPrice());
-					System.out.println("남은 티켓들의 수: " + concert.getLeftTicket());
+					System.out.println("남은 티켓들의 수: " + concert.getCapacity());
 				}
 				
 			} else if (input.equals("V")) {
 				concert.setIsOnline(false);
-				System.out.println("남은 티켓들의 수: " + concert.getLeftTicket());
+				System.out.println("남은 티켓들의 수: " + concert.getCapacity());
 			} else if (input.equals("F")) {
 				concert.setIsOnline(false);
 			} else {
@@ -55,17 +55,17 @@ public class ConcertDriver {
 				
 				if(ticketNum>concert.getCapacity()) {
 					System.out.println("죄송합니다. 판매를 완료할 수 없습니다.");
-					System.out.println("남은 티켓들의 수: " + concert.getLeftTicket());
+					System.out.println("남은 티켓들의 수: " + concert.getCapacity());
 				}else {
 					concert.setTicketNum(ticketNum);
 					concert.setSoldTicket(ticketNum);
 					System.out.println("티켓들의 총 가격= "+concert.getTotalPrice());
-					System.out.println("남은 티켓들의 수: " + concert.getLeftTicket());
+					System.out.println("남은 티켓들의 수: " + concert.getCapacity());
 					concert.setCapacity(ticketNum);
 				}
 			} else if (input.equals("F")) {
 				concert.setIsOnline(true);
-				System.out.println("남은 티켓들의 수: " + concert.getLeftTicket());
+				System.out.println("남은 티켓들의 수: " + concert.getCapacity());
 			} else {
 				System.out.println("다시 선택해주세요.");
 			}

@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="setSold"/>
+		<item key="selection" value="getFinalTicket"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="setsold"/>
-			<item value="left"/>
-			<item value="getleft"/>
-			<item value="onlinesa"/>
-			<item value="classHeights"/>
-			<item value="||"/>
-			<item value="=="/>
+			<item value="getFinalTicket"/>
+			<item value="getTicketNum"/>
+			<item value="getLeftTicket"/>
+			<item value="setIsOnline"/>
+			<item value="getIsOnline"/>
+			<item value="setPriceOffline"/>
+			<item value="getPriceOffline"/>
+			<item value="setPriceOnline"/>
+			<item value="getPriceOnline"/>
+			<item value="setSoldTicket"/>
+			<item value="getSoldTicket"/>
+			<item value="setCapacity"/>
+			<item value="getCapacity"/>
+			<item value="setName"/>
+			<item value="getName"/>
 		</list>
 		<list key="replacehistory">
 			<item value="student"/>
