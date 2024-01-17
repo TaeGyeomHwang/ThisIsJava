@@ -4,57 +4,42 @@ import java.util.*;
 
 public class StudentDriver {
 
+	private static Scanner scan = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+
 		Student[] student = new Student[2];
 		String[] name = { "선남", "선녀" };
 
 		for (int i = 0; i < student.length; i++) {
 			student[i] = new Student(name[i]);
 
-			System.out.printf(name[i] + "의 퀴즈 점수를 입력하라: ");
-			int quiz = Integer.parseInt(scan.nextLine());
-			if (quiz < 0 || quiz > 100) {
-				System.out.println("적절하지 않은 점수다.");
-				do {
-					System.out.printf(name[i] + "의 퀴즈 점수를 입력하라: ");
-					quiz = Integer.parseInt(scan.nextLine());
-				} while (quiz < 0 && quiz > 100);
-			}
-			System.out.printf(name[i] + "의 중간시험 점수를 입력하라: ");
-			int midterm = Integer.parseInt(scan.nextLine());
-			if (midterm < 0 || midterm > 100) {
-				System.out.println("적절하지 않은 점수다.");
-				do {
-					System.out.printf(name[i] + "의 중간시험 점수를 입력하라: ");
-					midterm = Integer.parseInt(scan.nextLine());
-				} while (midterm < 0 && midterm > 100);
-			}
-			System.out.printf(name[i] + "의 기말시험 점수를 입력하라: ");
-			int finalterm = Integer.parseInt(scan.nextLine());
-			if (finalterm < 0 || finalterm > 100) {
-				System.out.println("적절하지 않은 점수다.");
-				do {
-					System.out.printf(name[i] + "의 기말시험 점수를 입력하라: ");
-					finalterm = Integer.parseInt(scan.nextLine());
-				} while (finalterm < 0 && finalterm < 0);
-			}
+			try {
+				invokeMethod(student[i], "퀴즈", "setQuiz", "valScore");
+				invokeMethod(student[i], "중간시험", "setMidterm", "valScore");
+				invokeMethod(student[i], "기말시험", "setFinalterm", "valScore");
+				System.out.println(student[i].getString());
 
-			student[i].setQuiz(quiz);
-			student[i].setMidterm(midterm);
-			student[i].setFinalterm(finalterm);
-
-			System.out
-					.println(name[i] + "의 총점은 " + totalScore(student[i]) + "이고 학점은 " + totalGrade(student[i]) + "이다.");
+				System.out.println();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
-	private static Double totalScore(Student s) {
-		return s.setTotalScore();
+	private static void invokeMethod(Student s, String keyword, String method1, String method2) throws Exception {
+		while (true) {
+			System.out.printf(s.getName() + "의 " + keyword + "점수를 입력하라: ");
+			int score = Integer.parseInt(scan.nextLine());
+			s.getClass()
+				.getDeclaredMethod(method1, int.class)
+				.invoke(s, score);
+			//이 함수를 호출하면 Object 타입이 되므로 강제 형변환 한다.
+			if ((boolean) s.getClass()	
+					.getDeclaredMethod(method2, int.class)
+					.invoke(s, score)) {
+				break;
+			}
+		}
 	}
-
-	private static String totalGrade(Student s) {
-		return s.setTotalGrade();
-	}
-
 }
