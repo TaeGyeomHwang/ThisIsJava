@@ -7,16 +7,17 @@ import java.util.Map.Entry;
 public class intFrequency {
 
 	public static void main(String[] args) {
-		int[] arr = {1,1,4,7,3,5,5,4,3,1,6};
+		int[] num = { 1, 1, 4, 7, 3, 5, 5, 4, 3, 1, 6 };
 		Map<Integer, Integer> map = new HashMap<>();
+
 		int maxVal = 0;
 		Integer maxInt = 0;
 
-		for (Integer s : arr) {
+		for (Integer s : num) {
 			if (!map.containsKey(s)) {
 				map.put(s, 1);
 			} else {
-				map.put(s, map.get(s) + 1);
+				map.put(s, map.getOrDefault(s, 0) + 1);
 			}
 		}
 

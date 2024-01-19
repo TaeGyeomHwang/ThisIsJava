@@ -1,1 +1,8 @@
 /.metadata/
+/.recommenders/
+.classpath
+.project
+.gitignore
+.settings/
+
+thisisjava/.classpath

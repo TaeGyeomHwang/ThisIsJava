@@ -21,6 +21,7 @@ public class DuplicateNum {
 			System.out.println(sb.toString());
 			set.clear();
 			sb.delete(0, sb.length());
+//			sb.setLength(0);	//	위와 같다.
 		}
 	}
 }

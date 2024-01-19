@@ -9,6 +9,7 @@ public class CharFrequeny {
 	public static void main(String[] args) {
 		String str = "hi, my name is donghee. nice to meet you";
 		Map<String, Integer> map = new HashMap<>();
+		
 		String[] str_arr = str.split("");
 		int maxVal = 0;
 		String maxString = "";
