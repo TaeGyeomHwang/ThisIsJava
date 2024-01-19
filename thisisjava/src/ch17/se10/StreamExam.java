@@ -1,7 +1,6 @@
 package ch17.se10;
 
 import java.util.Arrays;
-import java.util.OptionalDouble;
 import java.util.OptionalInt;
 
 public class StreamExam {
