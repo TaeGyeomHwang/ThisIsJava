@@ -1,7 +1,6 @@
 package ch19;
 
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 public class IPExam {
 
