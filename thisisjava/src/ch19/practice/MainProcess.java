@@ -295,7 +295,7 @@ public class MainProcess {
 					// 타이머 취소
 					timer.cancel();
 					fileWrite();
-					System.exit(0);
+					executorService.shutdown();
 				});
 			}
 		};
