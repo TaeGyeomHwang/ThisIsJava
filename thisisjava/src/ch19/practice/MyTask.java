@@ -6,6 +6,6 @@ public class MyTask extends TimerTask
 {
     public void run()
     {
-        System.out.println("µ¥ÀÌÅÍ¸¦ ÀúÀåÁßÀÔ´Ï´Ù . . .");
+        System.out.println("ë°ì´í„°ë¥¼ ì €ì¥ì¤‘ì…ë‹ˆë‹¤ . . .");
     }
 }

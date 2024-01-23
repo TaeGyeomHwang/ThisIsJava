@@ -38,11 +38,11 @@ public class MainProcess {
 		String skill2;
 		String skill3;
 
-		// ÆÄÀÏ·ÎºÎÅÍ JSON ÀĞ±â
+		// íŒŒì¼ë¡œë¶€í„° JSON ì½ê¸°
 		try (BufferedReader br = new BufferedReader(new FileReader("C:/Temp2/people.json", Charset.forName("UTF-8")))) {
 			String json = br.readLine();
 
-			// JSON ÆÄ½Ì
+			// JSON íŒŒì‹±
 			JSONObject obj = new JSONObject(json);
 			JSONArray arr = obj.getJSONArray("people");
 
@@ -51,82 +51,82 @@ public class MainProcess {
 				people.add(parsePerson(person));
 			}
 		} catch (IOException e) {
-			System.err.println("IOException ¹ß»ı: " + e.getMessage());
+			System.err.println("IOException ë°œìƒ: " + e.getMessage());
 		}
 
 		while (select != 5) {
 			System.out.println("----------------------------------------------");
-			System.out.println("              ÀÎ¿ø °ü¸® ÇÁ·Î±×·¥");
+			System.out.println("              ì¸ì› ê´€ë¦¬ í”„ë¡œê·¸ë¨");
 			System.out.println("----------------------------------------------");
-			System.out.println("| 1.Á¶È¸ | 2.Ãß°¡ | 3.¼öÁ¤ | 4.»èÁ¦ | 5.Á¾·á |");
+			System.out.println("| 1.ì¡°íšŒ | 2.ì¶”ê°€ | 3.ìˆ˜ì • | 4.ì‚­ì œ | 5.ì¢…ë£Œ |");
 			System.out.println("----------------------------------------------");
-			System.out.println("¿øÇÏ½Ã´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ½Ê½Ã¿À > ");
+			System.out.println("ì›í•˜ì‹œëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì‹­ì‹œì˜¤ > ");
 			select = Integer.parseInt(scan.nextLine());
 
 			switch (select) {
-				case 1 -> { // Á¶È¸
+				case 1 -> { // ì¡°íšŒ
 					if (people.size() == 0) {
-						System.out.println("ÀÎ¿øÀÌ ¾ø½À´Ï´Ù.");
+						System.out.println("ì¸ì›ì´ ì—†ìŠµë‹ˆë‹¤.");
 						break;
 					}
 					for (Person p : people) {
 						System.out.println(p);
 					}
 				}
-				case 2 -> { // Ãß°¡
+				case 2 -> { // ì¶”ê°€
 					try {
-						System.out.print("id¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("idë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						id = scan.nextLine();
 						if (id.equals("")) {
-							System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+							System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 							break;
 						}
 	
-						System.out.print("nameÀ» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("nameì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						name = scan.nextLine();
 						if (name.equals("")) {
-							System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+							System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 							break;
 						}
 	
-						System.out.print("age¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("ageë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						age = Integer.parseInt(scan.nextLine());
 	
-						System.out.print("student¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("studentë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						student = Boolean.parseBoolean(scan.nextLine());
 	
-						System.out.print("tel-homeÀ» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("tel-homeì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						telHome = scan.nextLine();
 						if (telHome.equals("")) {
-							System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+							System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 							break;
 						}
 	
-						System.out.print("tel-mobileÀ» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("tel-mobileì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						telMobile = scan.nextLine();
 						if (telMobile.equals("")) {
-							System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+							System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 							break;
 						}
 	
-						System.out.print("skill-1À» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("skill-1ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						skill1 = scan.nextLine();
 						if (skill1.equals("")) {
-							System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+							System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 							break;
 						}
 	
-						System.out.print("skill-2À» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("skill-2ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						skill2 = scan.nextLine();
 						if (skill2.equals("")) {
-							System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+							System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 							break;
 						}
 	
-						System.out.print("skill-3À» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+						System.out.print("skill-3ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 						skill3 = scan.nextLine();
 						if (skill3.equals("")) {
-							System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+							System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 							break;
 						}
 	
@@ -140,118 +140,118 @@ public class MainProcess {
 						jsonArr.put(obj);
 						root.put("member", jsonArr);
 	
-						System.out.println("µ¥ÀÌÅÍ°¡ Ãß°¡µÇ¾ú½À´Ï´Ù");
+						System.out.println("ë°ì´í„°ê°€ ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤");
 					} catch (Exception e) {
-						System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+						System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 						break;
 					}
 	
 				}
-				case 3 -> { // ¼öÁ¤
-					System.out.print("¼öÁ¤ÇÒ memberÀÇ id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä > ");
+				case 3 -> { // ìˆ˜ì •
+					System.out.print("ìˆ˜ì •í•  memberì˜ idë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” > ");
 					id = scan.nextLine();
 					boolean isTrue = false;
 					for (int i = 0; i < people.size(); i++) {
 						if (people.get(i).getId().equals(id)) {
 							isTrue = true;
-							System.out.println("ÇØ´ç ÇĞ»ıÀÇ Á¤º¸\n" + people.get(i));
-							System.out.print("¼öÁ¤ÇÒ ÇÊµå¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä >");
+							System.out.println("í•´ë‹¹ í•™ìƒì˜ ì •ë³´\n" + people.get(i));
+							System.out.print("ìˆ˜ì •í•  í•„ë“œë¥¼ ì„ íƒí•´ì£¼ì„¸ìš” >");
 							String input = scan.nextLine();
 							if (input.equals("id")) {
-								System.out.println("º¯°æÇÒ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >");
+								System.out.println("ë³€ê²½í•  ë°ì´í„°ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” >");
 								id = scan.nextLine();
 								if (id.equals("")) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								} else {
 									people.get(i).setId(id);
-									System.out.println("Á¤»ó Ã³¸® µÇ¾ú½À´Ï´Ù");
+									System.out.println("ì •ìƒ ì²˜ë¦¬ ë˜ì—ˆìŠµë‹ˆë‹¤");
 									break;
 								}
 							} else if (input.equals("name")) {
-								System.out.println("º¯°æÇÒ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >");
+								System.out.println("ë³€ê²½í•  ë°ì´í„°ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” >");
 								name = scan.nextLine();
 								if (name.equals("")) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								} else {
 									people.get(i).setName(name);
-									System.out.println("Á¤»ó Ã³¸® µÇ¾ú½À´Ï´Ù");
+									System.out.println("ì •ìƒ ì²˜ë¦¬ ë˜ì—ˆìŠµë‹ˆë‹¤");
 									break;
 								}
 							} else if (input.equals("age")) {
-								System.out.println("º¯°æÇÒ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >");
+								System.out.println("ë³€ê²½í•  ë°ì´í„°ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” >");
 								try {
 									age = Integer.parseInt(scan.nextLine());
 								} catch (Exception e) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								}
 								people.get(i).setAge(age);
-								System.out.println("Á¤»ó Ã³¸® µÇ¾ú½À´Ï´Ù");
+								System.out.println("ì •ìƒ ì²˜ë¦¬ ë˜ì—ˆìŠµë‹ˆë‹¤");
 	
 								break;
 							} else if (input.equals("student")) {
-								System.out.println("º¯°æÇÒ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >");
+								System.out.println("ë³€ê²½í•  ë°ì´í„°ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” >");
 								try {
 									student = Boolean.parseBoolean(scan.nextLine());
 								} catch (Exception e) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								}
 								people.get(i).setStudent(student);
-								System.out.println("Á¤»ó Ã³¸® µÇ¾ú½À´Ï´Ù");
+								System.out.println("ì •ìƒ ì²˜ë¦¬ ë˜ì—ˆìŠµë‹ˆë‹¤");
 	
 								break;
 							} else if (input.equals("tel")) {
-								System.out.print("tel-homeÀ» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+								System.out.print("tel-homeì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 								telHome = scan.nextLine();
 								if (telHome.equals("")) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								}
-								System.out.print("tel-mobileÀ» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+								System.out.print("tel-mobileì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 								telMobile = scan.nextLine();
 								if (telMobile.equals("")) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								}
 								people.get(i).setTel(new Tel(telHome, telMobile));
-								System.out.println("Á¤»ó Ã³¸® µÇ¾ú½À´Ï´Ù");
+								System.out.println("ì •ìƒ ì²˜ë¦¬ ë˜ì—ˆìŠµë‹ˆë‹¤");
 								break;
 	
 							} else if (input.equals("skill")) {
-								System.out.print("skill-1À» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+								System.out.print("skill-1ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 								skill1 = scan.nextLine();
 								if (skill1.equals("")) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								}
-								System.out.print("skill-2À» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+								System.out.print("skill-2ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 								skill2 = scan.nextLine();
 								if (skill2.equals("")) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								}
-								System.out.print("skill-3À» ÀÔ·ÂÇÏ½Ê½Ã¿À >");
+								System.out.print("skill-3ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤ >");
 								skill3 = scan.nextLine();
 								if (skill3.equals("")) {
-									System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+									System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 									break;
 								}
 								people.get(i).setSkill(new String[] { skill1, skill2, skill3 });
-								System.out.println("Á¤»ó Ã³¸® µÇ¾ú½À´Ï´Ù");
+								System.out.println("ì •ìƒ ì²˜ë¦¬ ë˜ì—ˆìŠµë‹ˆë‹¤");
 								break;
 							}
 						}
 					}
 					if (!isTrue) {
-						System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+						System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 						break;
 					}
 				}
-				case 4 -> { // »èÁ¦
-					System.out.print("»èÁ¦ÇÒ memberÀÇ id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä > ");
+				case 4 -> { // ì‚­ì œ
+					System.out.print("ì‚­ì œí•  memberì˜ idë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” > ");
 					id = scan.nextLine();
 					boolean isTrue = false;
 					for (int i = 0; i < people.size(); i++) {
@@ -259,40 +259,40 @@ public class MainProcess {
 							isTrue = true;
 							people.remove(i);
 	
-							System.out.println("Á¤»ó Ã³¸® µÇ¾ú½À´Ï´Ù");
+							System.out.println("ì •ìƒ ì²˜ë¦¬ ë˜ì—ˆìŠµë‹ˆë‹¤");
 							break;
 						}
 					}
 					if (!isTrue) {
-						System.out.println("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù");
+						System.out.println("ì…ë ¥í•œ ë°ì´í„°ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤");
 						break;
 					}
 				}
 				default -> {
 					if (select != 5)
-						System.out.println("Àß¸ø ¼±ÅÃÇÏ¿´½À´Ï´Ù.");
+						System.out.println("ì˜ëª» ì„ íƒí•˜ì˜€ìŠµë‹ˆë‹¤.");
 				}
 			}
 		}
-		stopMain(); // Á¾·á
+		stopMain(); // ì¢…ë£Œ
 	}
 
-	private static void stopMain() { // ¸ÖÆ¼½º·¹µå·Î ÇÁ·Î±×·¥ Á¾·áÇÏ´Â ¸Ş¼Òµå
+	private static void stopMain() { // ë©€í‹°ìŠ¤ë ˆë“œë¡œ í”„ë¡œê·¸ë¨ ì¢…ë£Œí•˜ëŠ” ë©”ì†Œë“œ
 		Thread thread = new Thread() {
 			@Override
 			public void run() {
 				executorService.execute(() -> {
 					MyTask task = new MyTask();
 					Timer timer = new Timer();
-					// 0.5ÃÊ °£°İÀ¸·Î ¹İº¹
+					// 0.5ì´ˆ ê°„ê²©ìœ¼ë¡œ ë°˜ë³µ
 					timer.schedule(task, 0, 500);
 					try {
-						// 1ÃÊÈÄ¿¡ ½º·¹µå¸¦ ¸ØÃá´Ù.
+						// 1ì´ˆí›„ì— ìŠ¤ë ˆë“œë¥¼ ë©ˆì¶˜ë‹¤.
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
 						timer.cancel();
 					}
-					// Å¸ÀÌ¸Ó Ãë¼Ò
+					// íƒ€ì´ë¨¸ ì·¨ì†Œ
 					timer.cancel();
 					fileWrite();
 					System.exit(0);
@@ -302,11 +302,11 @@ public class MainProcess {
 		thread.start();
 	}
 
-	private static Person parsePerson(JSONObject obj) { // °´Ã¼ Á¤º¸ ÀĞ¾î¿À´Â ¸Ş¼Òµå
-		// °´Ã¼ ¼Ó¼º Á¤º¸ ÀĞ±â
+	private static Person parsePerson(JSONObject obj) { // ê°ì²´ ì •ë³´ ì½ì–´ì˜¤ëŠ” ë©”ì†Œë“œ
+		// ê°ì²´ ì†ì„± ì •ë³´ ì½ê¸°
 		JSONObject tel = obj.getJSONObject("tel");
 
-		// ¹è¿­ ¼Ó¼º Á¤º¸ ÀĞ±â
+		// ë°°ì—´ ì†ì„± ì •ë³´ ì½ê¸°
 		JSONArray skill = obj.getJSONArray("skill");
 		String[] arr = new String[skill.length()];
 
@@ -314,14 +314,14 @@ public class MainProcess {
 			arr[i] = skill.getString(i);
 		}
 
-		// ¼Ó¼º Á¤º¸ ÀĞ±â
+		// ì†ì„± ì •ë³´ ì½ê¸°
 		return new Person(obj.getString("id"), obj.getString("name"), obj.getInt("age"), obj.getBoolean("student"),
 				new Tel(tel.getString("home"), tel.getString("mobile")), arr);
 	}
 
-	private static JSONObject createJSON(Person person) { // JSONObject »ı¼ºÇÏ´Â ¸Ş¼Òµå
+	private static JSONObject createJSON(Person person) { // JSONObject ìƒì„±í•˜ëŠ” ë©”ì†Œë“œ
 		JSONObject obj = new JSONObject();
-		obj.put("id", person.getId()); // putÀ¸·Î µ¥ÀÌÅÍ ÀÔ·Â °¡´É. Ã³À½ÀÌ Å°, µÚ°¡ ¹ë·ù.
+		obj.put("id", person.getId()); // putìœ¼ë¡œ ë°ì´í„° ì…ë ¥ ê°€ëŠ¥. ì²˜ìŒì´ í‚¤, ë’¤ê°€ ë°¸ë¥˜.
 		obj.put("name", person.getName());
 		obj.put("age", person.getAge());
 		obj.put("student", person.isStudent());
@@ -330,7 +330,7 @@ public class MainProcess {
 		inner.put("home", person.getTel().getHome());
 		inner.put("mobile", person.getTel().getMobile());
 
-		obj.put("tell", inner); // °´Ã¼µµ °´Ã¼¿¡ ³ÖÀ» ¼ö ÀÖ´Ù.
+		obj.put("tell", inner); // ê°ì²´ë„ ê°ì²´ì— ë„£ì„ ìˆ˜ ìˆë‹¤.
 
 		JSONArray skill = new JSONArray();
 		skill.put(person.getSkill()[0]);
@@ -342,11 +342,11 @@ public class MainProcess {
 		return obj;
 	}
 
-	private static void fileWrite() { // JSON ÆÄÀÏ ÀúÀåÇÏ´Â ¸Ş¼Òµå
+	private static void fileWrite() { // JSON íŒŒì¼ ì €ì¥í•˜ëŠ” ë©”ì†Œë“œ
 		try {
 			root.put("people", people);
 			Writer writer = new FileWriter("C:/Temp2/people.json", Charset.forName("UTF-8"));
-			writer.write(root.toString()); // ³»¿ë¹°À» ÆÄÀÏ·Î ¾²°í ½Í´Ù¸é toString »ç¿ë.
+			writer.write(root.toString()); // ë‚´ìš©ë¬¼ì„ íŒŒì¼ë¡œ ì“°ê³  ì‹¶ë‹¤ë©´ toString ì‚¬ìš©.
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
