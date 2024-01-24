@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.regex.Pattern;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,8 +31,8 @@ public class MainProcess {
 		int select = 0;
 		String id;
 		String name;
-		int age;
-		boolean student;
+		String age;
+		String student;
 		String telHome;
 		String telMobile;
 		String skill1;
@@ -74,78 +75,15 @@ public class MainProcess {
 					}
 				}
 				case 2 -> { // 추가
-					try {
-						System.out.print("id를 입력하십시오 >");
-						id = scan.nextLine();
-						if (id.equals("")) {
-							System.out.println("입력한 데이터가 올바르지 않습니다");
-							break;
-						}
-	
-						System.out.print("name을 입력하십시오 >");
-						name = scan.nextLine();
-						if (name.equals("")) {
-							System.out.println("입력한 데이터가 올바르지 않습니다");
-							break;
-						}
-	
-						System.out.print("age를 입력하십시오 >");
-						age = Integer.parseInt(scan.nextLine());
-	
-						System.out.print("student를 입력하십시오 >");
-						student = Boolean.parseBoolean(scan.nextLine());
-	
-						System.out.print("tel-home을 입력하십시오 >");
-						telHome = scan.nextLine();
-						if (telHome.equals("")) {
-							System.out.println("입력한 데이터가 올바르지 않습니다");
-							break;
-						}
-	
-						System.out.print("tel-mobile을 입력하십시오 >");
-						telMobile = scan.nextLine();
-						if (telMobile.equals("")) {
-							System.out.println("입력한 데이터가 올바르지 않습니다");
-							break;
-						}
-	
-						System.out.print("skill-1을 입력하십시오 >");
-						skill1 = scan.nextLine();
-						if (skill1.equals("")) {
-							System.out.println("입력한 데이터가 올바르지 않습니다");
-							break;
-						}
-	
-						System.out.print("skill-2을 입력하십시오 >");
-						skill2 = scan.nextLine();
-						if (skill2.equals("")) {
-							System.out.println("입력한 데이터가 올바르지 않습니다");
-							break;
-						}
-	
-						System.out.print("skill-3을 입력하십시오 >");
-						skill3 = scan.nextLine();
-						if (skill3.equals("")) {
-							System.out.println("입력한 데이터가 올바르지 않습니다");
-							break;
-						}
-	
-						Person p = new Person(id, name, age, student, new Tel(telHome, telMobile),
-								new String[] { skill1, skill2, skill3 });
-	
-						people.add(p);
-	
-						JSONObject obj = createJSON(p);
-						JSONArray jsonArr = new JSONArray();
-						jsonArr.put(obj);
-						root.put("member", jsonArr);
-	
-						System.out.println("데이터가 추가되었습니다");
-					} catch (Exception e) {
-						System.out.println("입력한 데이터가 올바르지 않습니다");
-						break;
-					}
-	
+					Person p = new Person();
+					if(!valId(p))break;
+					if(!valName(p))break;
+					if(!valAge(p))break;
+					if(!valStudent(p))break;
+					if(!valTel(p))break;
+					if(!valSkill(p))break;
+					people.add(p);
+					System.out.println("데이터가 추가되었습니다");
 				}
 				case 3 -> { // 수정
 					System.out.print("수정할 member의 id를 입력해주세요 > ");
@@ -182,7 +120,7 @@ public class MainProcess {
 							} else if (input.equals("age")) {
 								System.out.println("변경할 데이터를 입력해주세요 >");
 								try {
-									age = Integer.parseInt(scan.nextLine());
+									age = scan.nextLine();
 								} catch (Exception e) {
 									System.out.println("입력한 데이터가 올바르지 않습니다");
 									break;
@@ -194,7 +132,7 @@ public class MainProcess {
 							} else if (input.equals("student")) {
 								System.out.println("변경할 데이터를 입력해주세요 >");
 								try {
-									student = Boolean.parseBoolean(scan.nextLine());
+									student = scan.nextLine();
 								} catch (Exception e) {
 									System.out.println("입력한 데이터가 올바르지 않습니다");
 									break;
@@ -253,20 +191,14 @@ public class MainProcess {
 				case 4 -> { // 삭제
 					System.out.print("삭제할 member의 id를 입력해주세요 > ");
 					id = scan.nextLine();
-					boolean isTrue = false;
 					for (int i = 0; i < people.size(); i++) {
 						if (people.get(i).getId().equals(id)) {
-							isTrue = true;
 							people.remove(i);
-	
 							System.out.println("정상 처리 되었습니다");
 							break;
 						}
 					}
-					if (!isTrue) {
-						System.out.println("입력한 데이터가 올바르지 않습니다");
-						break;
-					}
+					System.out.println("입력한 데이터가 올바르지 않습니다");
 				}
 				default -> {
 					if (select != 5)
@@ -276,7 +208,6 @@ public class MainProcess {
 		}
 		stopMain(); // 종료
 	}
-
 	private static void stopMain() { // 멀티스레드로 프로그램 종료하는 메소드
 		Thread thread = new Thread() {
 			@Override
@@ -315,7 +246,7 @@ public class MainProcess {
 		}
 
 		// 속성 정보 읽기
-		return new Person(obj.getString("id"), obj.getString("name"), obj.getInt("age"), obj.getBoolean("student"),
+		return new Person(obj.getString("id"), obj.getString("name"), obj.getString("age"), obj.getString("student"),
 				new Tel(tel.getString("home"), tel.getString("mobile")), arr);
 	}
 
@@ -324,7 +255,7 @@ public class MainProcess {
 		obj.put("id", person.getId()); // put으로 데이터 입력 가능. 처음이 키, 뒤가 밸류.
 		obj.put("name", person.getName());
 		obj.put("age", person.getAge());
-		obj.put("student", person.isStudent());
+		obj.put("student", person.getStudent());
 
 		JSONObject inner = new JSONObject();
 		inner.put("home", person.getTel().getHome());
@@ -353,4 +284,82 @@ public class MainProcess {
 			e.printStackTrace();
 		}
 	}
+	
+	private static boolean valId(Person p) {
+		System.out.print("id를 입력하십시오 >");
+		String id = scan.nextLine();
+		if (id.equals("")) {
+			System.out.println("입력한 데이터가 올바르지 않습니다");
+			return false;
+		}else {
+			p.setId(id);
+			return true;
+		}
+	}
+	private static boolean valName(Person p) {
+		System.out.print("name을 입력하십시오 >");
+		String name = scan.nextLine();
+		if (name.equals("")) {
+			System.out.println("입력한 데이터가 올바르지 않습니다");
+			return false;
+		}else {
+			p.setName(name);
+			return true;
+		}
+	}
+	private static boolean valAge(Person p) {
+		System.out.print("age를 입력하십시오 >");
+		String age = scan.nextLine();
+		if (age.equals("")) {
+			System.out.println("입력한 데이터가 올바르지 않습니다");
+			return false;
+		}else {
+			p.setAge(age);
+			return true;
+		}
+	}
+	private static boolean valStudent(Person p) {
+		System.out.print("student를 입력하십시오(true 나 false) >");
+		String student = scan.nextLine();
+		if (student.equals("")||!student.equals("true") && !student.equals("false")) {
+			System.out.println("입력한 데이터가 올바르지 않습니다");
+			return false;
+		}else {
+			p.setStudent(student);
+			return true;
+		}
+	}
+	private static boolean valTel(Person p) {
+		System.out.print("tel-home을 입력하십시오(각 자리수마다 - 입력) >");
+		String telHome = scan.nextLine();
+		if (!Pattern.matches("\\d{2,3}-\\d{3,4}-\\d{4}", telHome)) {
+			System.out.println("입력한 데이터가 올바르지 않습니다");
+			return false;
+		}
+		
+		System.out.print("tel-mobile을 입력하십시오(각 자리수마다 - 입력) >");
+		String telMobile = scan.nextLine();
+		if (!Pattern.matches("\\d{2,3}-\\d{3,4}-\\d{4}", telMobile)) {
+			System.out.println("입력한 데이터가 올바르지 않습니다");
+			return false;
+		}
+		
+		p.setTel(new Tel(telHome,telMobile));
+		return true;
+	}
+	private static boolean valSkill(Person p) {
+		String[] skills = new String[3];
+		for(int i=0; i<3; i++) {
+			System.out.print("skill-"+(i+1)+"을 입력하십시오 >");
+			String skill = scan.nextLine();
+			if (skill.equals("")) {
+				System.out.println("입력한 데이터가 올바르지 않습니다");
+				return false;
+			}
+			skills[i] = skill;
+		}
+		p.setSkill(new String[] { skills[0], skills[1], skills[2] });
+		return true;
+	}
+
 }
