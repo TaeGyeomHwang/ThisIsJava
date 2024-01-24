@@ -13,9 +13,9 @@ public class Product implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 7394135165810371117L;
-	private static String company = "»ï¼º";	//»ı¼ºÀÚ¿¡ Á¤Àû ÇÊµå´Â Æ÷ÇÔ ¾ÈµÊ
+	private static String company = "ì‚¼ì„±";	//ìƒì„±ìì— ì •ì  í•„ë“œëŠ” í¬í•¨ ì•ˆë¨
 	private String name;
 	private int price;
-	private transient int pid;	//Á÷·ÄÈ­¿¡¼­ •ûÁÖ´Â Å°¿öµå (¿¹¿Ü ¶ó´Â ¶æ). ·±Å¸ÀÓ Áß¿¡¼­¸¸ È®ÀÎ °¡´É
+	private transient int pid;	//ì§ë ¬í™”ì—ì„œ Â•å¼§çµ í‚¤ì›Œë“œ (ì˜ˆì™¸ ë¼ëŠ” ëœ»). ëŸ°íƒ€ì„ ì¤‘ì—ì„œë§Œ í™•ì¸ ê°€ëŠ¥
 	
 }

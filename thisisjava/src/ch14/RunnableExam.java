@@ -10,10 +10,10 @@ public class RunnableExam {
 		for (int i = 0; i < mails.length; i++) {
 			mails[i][0] = "admin@my.com";
 			mails[i][1] = "member" + i + "@my.com";
-			mails[i][2] = "½Å»óÇ° ÀÔ°í";
+			mails[i][2] = "ì‹ ìƒí’ˆ ìž…ê³ ";
 		}
 
-		ExecutorService ex = Executors.newFixedThreadPool(5); // ÃÖ´ë ½º·¹µå °³¼ö, ÇÑ¹ø ¸¸µé¾îÁø ½º·¹µå´Â »ç¶óÁöÁö ¾ÊÀ½
+		ExecutorService ex = Executors.newFixedThreadPool(5); // ìµœëŒ€ ìŠ¤ë ˆë“œ ê°œìˆ˜, í•œë²ˆ ë§Œë“¤ì–´ì§„ ìŠ¤ë ˆë“œëŠ” ì‚¬ë¼ì§€ì§€ ì•ŠìŒ
 
 		for (int i = 0; i < 1000; i++) {
 			final int idx = i;
@@ -29,8 +29,8 @@ public class RunnableExam {
 			});
 		}
 		
-		ex.shutdown();	//ÀÛ¾÷ ³¡³¾¶§±îÁö ±â´Ù¸° ÈÄ Á¾·á
-//		ex.shutdownNow();	//ÀÛ¾÷ ³¡³»Áö ¸øÇØµµ °­Á¦·Î Á¾·á
+		ex.shutdown();	//ìž‘ì—… ëë‚¼ë•Œê¹Œì§€ ê¸°ë‹¤ë¦° í›„ ì¢…ë£Œ
+//		ex.shutdownNow();	//ìž‘ì—… ëë‚´ì§€ ëª»í•´ë„ ê°•ì œë¡œ ì¢…ë£Œ
 	}
 
 }

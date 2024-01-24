@@ -12,12 +12,12 @@ import java.util.concurrent.Executors;
 public class ServerExam {
 
 	private static ServerSocket serverSocket = null;
-	// ½º·¹µåÇ® ¼³Á¤(µ¿½Ã Á¢¼ÓÀÚ ¼ö 10¸íÀ¸·Î Á¦ÇÑ)
+	// ìŠ¤ë ˆë“œí’€ ì„¤ì •(ë™ì‹œ ì ‘ì†ì ìˆ˜ 10ëª…ìœ¼ë¡œ ì œí•œ)
 	private static ExecutorService executorService = Executors.newFixedThreadPool(10);
 
 	public static void main(String[] args) {
 		System.out.println("------------------------------------------");
-		System.out.println("¼­¹ö¸¦ Á¾·áÇÏ·Á¸é Q ¶Ç´Â q¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("ì„œë²„ë¥¼ ì¢…ë£Œí•˜ë ¤ë©´ Q ë˜ëŠ” që¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		System.out.println("------------------------------------------");
 
 		start();
@@ -33,24 +33,24 @@ public class ServerExam {
 		stop();
 	}
 
-	private static void start() { // ½º·¹µå ½ÇÇà
+	private static void start() { // ìŠ¤ë ˆë“œ ì‹¤í–‰
 		Thread thread = new Thread() {
 			@Override
 			public void run() {
 				try {
 					serverSocket = new ServerSocket(50001);
-					System.out.println("¼­¹ö ½ÃÀÛµÊ.");
+					System.out.println("ì„œë²„ ì‹œì‘ë¨.");
 
 					while (true) {
-						// 50001Æ÷Æ®·Î µé¾î¿À´Â »õ·Î¿î À¯Àú¸¦ ±â´Ù¸², ¿¬°á½Ã À¯Àú Á¤º¸ ´ãÀº °´Ã¼ »ı¼º
-						System.out.println("[¼­¹ö] ¿¬°áÀ» ±â´Ù¸²");
+						// 50001í¬íŠ¸ë¡œ ë“¤ì–´ì˜¤ëŠ” ìƒˆë¡œìš´ ìœ ì €ë¥¼ ê¸°ë‹¤ë¦¼, ì—°ê²°ì‹œ ìœ ì € ì •ë³´ ë‹´ì€ ê°ì²´ ìƒì„±
+						System.out.println("[ì„œë²„] ì—°ê²°ì„ ê¸°ë‹¤ë¦¼");
 						Socket socket = serverSocket.accept();
 
-						// accept ÇÒ¶§¸¶´Ù ½º·¹µåÇ®ÀÇ task¿¡ Ãß°¡.
+						// accept í• ë•Œë§ˆë‹¤ ìŠ¤ë ˆë“œí’€ì˜ taskì— ì¶”ê°€.
 						executorService.execute(() -> {
 							try {
 								InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();
-								System.out.println("[¼­¹ö] " + isa.getHostName() + "ÀÇ ¿¬°áÀ» ¼ö¶ôÇÔ");
+								System.out.println("[ì„œë²„] " + isa.getHostName() + "ì˜ ì—°ê²°ì„ ìˆ˜ë½í•¨");
 
 								DataInputStream dis = new DataInputStream(socket.getInputStream());
 								String message = dis.readUTF();
@@ -58,28 +58,28 @@ public class ServerExam {
 								DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 								dos.writeUTF(message);
 								dos.flush();
-								System.out.println("¼­¹ö¿¡¼­ ¹ŞÀº µ¥ÀÌÅÍ  \"" + message + "\"¸¦ º¸³¿");
+								System.out.println("ì„œë²„ì—ì„œ ë°›ì€ ë°ì´í„°  \"" + message + "\"ë¥¼ ë³´ëƒ„");
 
 								socket.close();
-								System.out.println("[¼­¹ö] " + isa.getHostName() + "ÀÇ ¿¬°áÀ» Á¾·áÇÔ");
+								System.out.println("[ì„œë²„] " + isa.getHostName() + "ì˜ ì—°ê²°ì„ ì¢…ë£Œí•¨");
 							} catch (Exception e) {
-								System.out.println("[¼­¹ö] " + e.getMessage());
+								System.out.println("[ì„œë²„] " + e.getMessage());
 							}
 						});
 					}
 				} catch (Exception e) {
-					System.out.println("[¼­¹ö] " + e.getMessage());
+					System.out.println("[ì„œë²„] " + e.getMessage());
 				}
 			}
 		};
 		thread.start();
 	}
 
-	private static void stop() { // ½º·¹µå Á¾·á
+	private static void stop() { // ìŠ¤ë ˆë“œ ì¢…ë£Œ
 		try {
 			serverSocket.close();
 		} catch (Exception e) {
-			System.out.println("[¼­¹ö] " + e.getMessage());
+			System.out.println("[ì„œë²„] " + e.getMessage());
 		}
 	}
 }

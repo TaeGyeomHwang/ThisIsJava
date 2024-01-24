@@ -13,11 +13,11 @@ public class ObjectIOStreamExam {
 			FileOutputStream fos = new FileOutputStream("C:/Temp2/object.dat");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-			Member m1 = new Member("spring", "º½");
-			Product p1 = new Product("³ëÆ®ºÏ", 1500000, 1);
+			Member m1 = new Member("spring", "ë´„");
+			Product p1 = new Product("ë…¸íŠ¸ë¶", 1500000, 1);
 			int[] arr = { 1, 2, 3 };
 			
-			//Á÷·ÄÈ­
+			//ì§ë ¬í™”
 			oos.writeObject(m1);
 			oos.writeObject(p1);
 			oos.writeObject(arr);
@@ -28,8 +28,8 @@ public class ObjectIOStreamExam {
 			FileInputStream fis = new FileInputStream("C:/Temp2/object.dat");
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			
-			//¿ªÁ÷·ÄÈ­
-			Member m2 = (Member) ois.readObject();	//object·Î ¹İÈ¯ÇÏÁö¸¸ ³»¿ë¹°Àº member´Ï±ñ °­Á¦ Çüº¯È¯ÇØµµ ¹®Á¦ x
+			//ì—­ì§ë ¬í™”
+			Member m2 = (Member) ois.readObject();	//objectë¡œ ë°˜í™˜í•˜ì§€ë§Œ ë‚´ìš©ë¬¼ì€ memberë‹ˆê¹ ê°•ì œ í˜•ë³€í™˜í•´ë„ ë¬¸ì œ x
 			Product p2 = (Product) ois.readObject();
 			int[] arr2 = (int[]) ois.readObject();
 			

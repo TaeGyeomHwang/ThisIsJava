@@ -6,7 +6,7 @@ import java.io.OutputStream;
 public class WriteExam {
 
 	public static void main(String[] args) throws Exception {
-		OutputStream os = new FileOutputStream("C:/Temp2/test1.txt");	//µ¥ÀÌÅÍ µµÂøÁö ÁöÁ¤
+		OutputStream os = new FileOutputStream("C:/Temp2/test1.txt");	//ë°ì´í„° ë„ì°©ì§€ ì§€ì •
 		
 		byte a = 10;
 		byte b = 20;
@@ -16,8 +16,8 @@ public class WriteExam {
 		os.write(b);
 		os.write(c);
 		
-		os.flush();	//¹öÆÛ¸¦ ºñ¿ò
-		os.close();	//»ç¿ëÇÑ ¸Ş¸ğ¸® ÇØÁ¦
+		os.flush();	//ë²„í¼ë¥¼ ë¹„ì›€
+		os.close();	//ì‚¬ìš©í•œ ë©”ëª¨ë¦¬ í•´ì œ
 		
 	}
 

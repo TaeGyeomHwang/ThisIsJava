@@ -11,7 +11,7 @@ public class CreateThreadExam {
 //			@Override
 //			public void run() {
 //				for (int i = 0; i < 5; i++) {
-//					System.out.println("¶ò");
+//					System.out.println("ëµ");
 //					try {
 //						Thread.sleep(500);
 //					} catch (Exception e) {
@@ -25,7 +25,7 @@ public class CreateThreadExam {
 			@Override
 			public void run() {
 				for (int i = 0; i < 5; i++) {
-					System.out.println("¶ò");
+					System.out.println("ëµ");
 					try {
 						Thread.sleep(500);
 					} catch (Exception e) {

@@ -12,7 +12,7 @@ public class JsonExam {
 	public static void main(String[] args) throws Exception {
 		Person winter = new Person(
 					"winter",
-					"ÇÑ°Ü¿ï",
+					"í•œê²¨ìš¸",
 					25,
 					true,
 					new Tel("02-123-1234", "010-1234-1324"),
@@ -21,7 +21,7 @@ public class JsonExam {
 
 		Person summer = new Person(
 					"summer",
-					"ÇÑ¿©¸§",
+					"í•œì—¬ë¦„",
 					25,
 					true,
 					new Tel("02-123-1234", "010-1234-1324"),
@@ -40,14 +40,14 @@ public class JsonExam {
 		root.put("people", people);
 
 		Writer writer = new FileWriter("C:/Temp2/people.json", Charset.forName("UTF-8"));
-		writer.write(root.toString()); // ³»¿ë¹°À» ÆÄÀÏ·Î ¾²°í ½Í´Ù¸é toString »ç¿ë.
+		writer.write(root.toString()); // ë‚´ìš©ë¬¼ì„ íŒŒì¼ë¡œ ì“°ê³  ì‹¶ë‹¤ë©´ toString ì‚¬ìš©.
 		writer.flush();
 		writer.close();
 	}
 
 	private static JSONObject createJSON(Person person) {
 		JSONObject obj = new JSONObject();
-		obj.put("id", person.getId()); // putÀ¸·Î µ¥ÀÌÅÍ ÀÔ·Â °¡´É. Ã³À½ÀÌ Å°, µÚ°¡ ¹ë·ù.
+		obj.put("id", person.getId()); // putìœ¼ë¡œ ë°ì´í„° ì…ë ¥ ê°€ëŠ¥. ì²˜ìŒì´ í‚¤, ë’¤ê°€ ë°¸ë¥˜.
 		obj.put("name", person.getName());
 		obj.put("age", person.getAge());
 		obj.put("student", person.isStudent());
@@ -56,7 +56,7 @@ public class JsonExam {
 		inner.put("home", person.getTel().getHome());
 		inner.put("mobile", person.getTel().getMobile());
 
-		obj.put("tel", inner); // °´Ã¼µµ °´Ã¼¿¡ ³ÖÀ» ¼ö ÀÖ´Ù.
+		obj.put("tel", inner); // ê°ì²´ë„ ê°ì²´ì— ë„£ì„ ìˆ˜ ìˆë‹¤.
 
 		JSONArray skill = new JSONArray();
 		skill.put(person.getSkill()[0]);

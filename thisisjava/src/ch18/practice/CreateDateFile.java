@@ -22,12 +22,12 @@ public class CreateDateFile {
 			date = LocalDate.now().plusDays(i);
 			path1 = Paths.get("C:/Temp/" + date.getYear() + "/" + date.getMonthValue() + "/" + date.getDayOfMonth());
 			path2 = Paths.get(path1 + "/now.txt");
-			String data = "ÇöÀç ½Ã°¢: " + date + " " + formattedTime;
+			String data = "í˜„ì¬ ì‹œê°: " + date + " " + formattedTime;
 			
 			Files.createDirectories(path1);
-			System.out.println(path1 + " µğ·ºÅÍ¸®¸¦ »ı¼ºÇÏ¿´½À´Ï´Ù.");
+			System.out.println(path1 + " ë””ë ‰í„°ë¦¬ë¥¼ ìƒì„±í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			Files.writeString(path2, data, Charset.forName("UTF-8"));
-			System.out.println(path2 + "ÆÄÀÏÀ» »ı¼ºÇÏ¿´½À´Ï´Ù.");
+			System.out.println(path2 + "íŒŒì¼ì„ ìƒì„±í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 	}
 

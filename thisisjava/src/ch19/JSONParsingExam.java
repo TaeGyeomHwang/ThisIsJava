@@ -10,16 +10,16 @@ import org.json.JSONObject;
 public class JSONParsingExam {
 
 	public static void main(String[] args) throws Exception {
-		// ÆÄÀÏ·ÎºÎÅÍ JSON ÀĞ±â
+		// íŒŒì¼ë¡œë¶€í„° JSON ì½ê¸°
 		BufferedReader br = new BufferedReader(new FileReader("C:/Temp2/people.json", Charset.forName("UTF-8")));
 		String people = br.readLine();
 		br.close();
 
-		// JSON ÆÄ½Ì
+		// JSON íŒŒì‹±
 		JSONObject obj = new JSONObject(people);
 		JSONArray arr = obj.getJSONArray("people");
 
-		// ¸Ş¼Òµå ½ÇÇà
+		// ë©”ì†Œë“œ ì‹¤í–‰
 		Person person1 = parsePerson(arr.getJSONObject(0));
 		Person person2 = parsePerson(arr.getJSONObject(1));
 		System.out.println(person1);
@@ -27,10 +27,10 @@ public class JSONParsingExam {
 	}
 
 	private static Person parsePerson(JSONObject obj) {
-		// °´Ã¼ ¼Ó¼º Á¤º¸ ÀĞ±â
+		// ê°ì²´ ì†ì„± ì •ë³´ ì½ê¸°
 		JSONObject tel = obj.getJSONObject("tell");
 
-		// ¹è¿­ ¼Ó¼º Á¤º¸ ÀĞ±â
+		// ë°°ì—´ ì†ì„± ì •ë³´ ì½ê¸°
 		JSONArray skill = obj.getJSONArray("skill");
 		String[] arr = new String[skill.length()];
 
@@ -38,7 +38,7 @@ public class JSONParsingExam {
 			arr[i] = skill.getString(i);
 		}
 
-		// ¼Ó¼º Á¤º¸ ÀĞ±â
+		// ì†ì„± ì •ë³´ ì½ê¸°
 		return new Person(obj.getString("id"), obj.getString("name"), obj.getInt("age"), obj.getBoolean("student"),
 				new Tel(tel.getString("home"), tel.getString("mobile")), arr);
 	}

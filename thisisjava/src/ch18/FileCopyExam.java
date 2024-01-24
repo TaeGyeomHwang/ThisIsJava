@@ -11,7 +11,7 @@ public class FileCopyExam {
 
 //		System.out.println(originalPath);
 		try {
-			String originalPath = FileCopyExam.class.getResource("image.jpg").getPath(); // urlÀÌ¶ó´Â °´Ã¼¸¦ getpath() ¸Ş¼Òµå¸¦ ÅëÇØ °æ·Î·Î º¯°æ
+			String originalPath = FileCopyExam.class.getResource("image.jpg").getPath(); // urlì´ë¼ëŠ” ê°ì²´ë¥¼ getpath() ë©”ì†Œë“œë¥¼ í†µí•´ ê²½ë¡œë¡œ ë³€ê²½
 			
 			FileInputStream fis = new FileInputStream(originalPath);
 			FileOutputStream fos = new FileOutputStream("C:/Temp2/targetFile.jpg");
@@ -22,7 +22,7 @@ public class FileCopyExam {
 					break;
 				fos.write(data);
 			}
-			System.out.println("±âº» ÆÄÀÏ½ºÆ®¸² °É¸° ½Ã°£: " + (System.nanoTime() - start));
+			System.out.println("ê¸°ë³¸ íŒŒì¼ìŠ¤íŠ¸ë¦¼ ê±¸ë¦° ì‹œê°„: " + (System.nanoTime() - start));
 
 			
 			BufferedInputStream bis = new BufferedInputStream(fis);
@@ -34,7 +34,7 @@ public class FileCopyExam {
 					break;
 				bos.write(data);
 			}
-			System.out.println("¹öÆÛ º¸Á¶ ½ºÆ®¸² °É¸° ½Ã°£: " + (System.nanoTime() - start));
+			System.out.println("ë²„í¼ ë³´ì¡° ìŠ¤íŠ¸ë¦¼ ê±¸ë¦° ì‹œê°„: " + (System.nanoTime() - start));
 			bis.close();
 			bos.flush();
 			bos.close();

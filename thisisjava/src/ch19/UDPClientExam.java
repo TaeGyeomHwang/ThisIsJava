@@ -10,16 +10,16 @@ public class UDPClientExam {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		try {
-			// DatagramSocket »ı¼º
+			// DatagramSocket ìƒì„±
 			DatagramSocket datagramSocket = new DatagramSocket();
 
 			while (true) {
-				// Àü¼ÛÇÒ ÁÖÁ¦ º¸³»±â
-				System.out.print("±¸µ¶ÇÒ ´º½º ÁÖÁ¦¸¦ ÀÔ·ÂÇÏ¼¼¿ä. Á¾·á¸¦ ¿øÇÏ¸é q ÀÔ·Â > ");
+				// ì „ì†¡í•  ì£¼ì œ ë³´ë‚´ê¸°
+				System.out.print("êµ¬ë…í•  ë‰´ìŠ¤ ì£¼ì œë¥¼ ì…ë ¥í•˜ì„¸ìš”. ì¢…ë£Œë¥¼ ì›í•˜ë©´ q ì…ë ¥ > ");
 				String data = scan.nextLine();
 				
 				if (data.toLowerCase().equals("q")) {
-					System.out.println("Å¬¶óÀÌ¾ğÆ®¸¦ Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("í´ë¼ì´ì–¸íŠ¸ë¥¼ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
 				}
 				
@@ -29,22 +29,22 @@ public class UDPClientExam {
 				datagramSocket.send(sendPacket);
 
 				while(true) {
-					// µ¥ÀÌÅÍ ¹Ş±â(UDPÀÌ¹Ç·Î ¿äÃ» º¸³»ÀÚ¸¶ÀÚ µ¥ÀÌÅÍ ¹ŞÀ» ÁØºñ ¾ÈÇÏ¸é µ¥ÀÌÅÍ¸¦ ¸ø¹ŞÀ½)
+					// ë°ì´í„° ë°›ê¸°(UDPì´ë¯€ë¡œ ìš”ì²­ ë³´ë‚´ìë§ˆì ë°ì´í„° ë°›ì„ ì¤€ë¹„ ì•ˆí•˜ë©´ ë°ì´í„°ë¥¼ ëª»ë°›ìŒ)
 					DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
 					datagramSocket.receive(receivePacket);
 					
-					// ¹®ÀÚ¿­·Î º¯È¯
+					// ë¬¸ìì—´ë¡œ ë³€í™˜
 					String news = new String(receivePacket.getData(), 0, receivePacket.getLength(), "UTF-8");
 					System.out.println(news);
 
-					// ¿øÇÏ´Â ¸¸Å­ ¹Ş°í while¹® Á¾·á
-					if (news.contains("´º½º5")) {
+					// ì›í•˜ëŠ” ë§Œí¼ ë°›ê³  whileë¬¸ ì¢…ë£Œ
+					if (news.contains("ë‰´ìŠ¤5")) {
 						System.out.println();
 						break;
 					}
 				}
 			}
-			// DatagramSocket ´İ±â
+			// DatagramSocket ë‹«ê¸°
 			datagramSocket.close();
 		} catch (Exception e) {
 

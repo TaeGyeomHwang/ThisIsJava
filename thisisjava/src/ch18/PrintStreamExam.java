@@ -10,11 +10,11 @@ public class PrintStreamExam {
 			FileOutputStream fos = new FileOutputStream("C:/Temp2/print.txt");
 			PrintStream ps = new PrintStream(fos);
 			
-			ps.print("¸¶Ä¡ ");	//¼Ò½º´Â System.out°ú °°°í Ãâ·ÂÀÌ µÇ´Â °æ·Î¸¸ ÄÜ¼Ö¿¡¼­ ÆÄÀÏ·Î ¹Ù²¼´Ù.
-			ps.println("ÇÁ¸°ÅÍ°¡ Ãâ·ÂÇÏ´Â °ÍÃ³·³ ");
-			ps.println("µ¥ÀÌÅÍ¸¦ Ãâ·ÂÇÕ´Ï´Ù. ");
-			ps.printf("| %6d | %-10s | %10s | \n", 1, "È«±æµ¿", "µµÀû");
-			ps.printf("| %6d | %-10s | %10s | \n", 2, "±èÀÚ¹Ù", "ÇĞ»ı");
+			ps.print("ë§ˆì¹˜ ");	//ì†ŒìŠ¤ëŠ” System.outê³¼ ê°™ê³  ì¶œë ¥ì´ ë˜ëŠ” ê²½ë¡œë§Œ ì½˜ì†”ì—ì„œ íŒŒì¼ë¡œ ë°”ê¼ˆë‹¤.
+			ps.println("í”„ë¦°í„°ê°€ ì¶œë ¥í•˜ëŠ” ê²ƒì²˜ëŸ¼ ");
+			ps.println("ë°ì´í„°ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤. ");
+			ps.printf("| %6d | %-10s | %10s | \n", 1, "í™ê¸¸ë™", "ë„ì ");
+			ps.printf("| %6d | %-10s | %10s | \n", 2, "ê¹€ìë°”", "í•™ìƒ");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

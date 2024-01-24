@@ -19,10 +19,10 @@ public class FileExam {
 //		file.delete();
 		
 		if(file.isDirectory()) {
-			System.out.println("µğ·ºÅä¸® ÀÔ´Ï´Ù.");
+			System.out.println("ë””ë ‰í† ë¦¬ ì…ë‹ˆë‹¤.");
 		}
 		if(file.isFile()) {
-			System.out.println("ÆÄÀÏ ÀÔ´Ï´Ù.");
+			System.out.println("íŒŒì¼ ì…ë‹ˆë‹¤.");
 		}
 
 	}

@@ -2,11 +2,11 @@ package ch18;
 
 import java.io.Serializable;
 
-public class Member implements Serializable{	//Á÷·ÄÈ­°¡ °¡´ÉÇÏ´Ù°í ¸í½ÃÇÏ´Â ¿ªÇÒ. 
+public class Member implements Serializable{	//ì§ë ¬í™”ê°€ ê°€ëŠ¥í•˜ë‹¤ê³  ëª…ì‹œí•˜ëŠ” ì—­í• . 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1616065040391964919L;	//·£´ı Å°°ª ÁÖ¾îÁü
+	private static final long serialVersionUID = -1616065040391964919L;	//ëœë¤ í‚¤ê°’ ì£¼ì–´ì§
 	private String id;
 	private String name;
 	

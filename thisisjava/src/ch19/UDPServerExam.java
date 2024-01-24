@@ -14,7 +14,7 @@ public class UDPServerExam {
 	
 	public static void main(String[] args) {
 		System.out.println("------------------------------------------");
-		System.out.println("¼­¹ö¸¦ Á¾·áÇÏ·Á¸é Q ¶Ç´Â q¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("ì„œë²„ë¥¼ ì¢…ë£Œí•˜ë ¤ë©´ Q ë˜ëŠ” që¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		System.out.println("------------------------------------------");
 
 		start();
@@ -30,17 +30,17 @@ public class UDPServerExam {
 		stop();
 	}
 
-	private static void start() { // ½º·¹µå ½ÃÀÛ
+	private static void start() { // ìŠ¤ë ˆë“œ ì‹œì‘
 		Thread thread = new Thread() {
 			@Override
 			public void run() {
 				try {
-					datagramSocket = new DatagramSocket(50001); // Æ÷Æ® ¹ÙÀÎµù
-					System.out.println("[¼­¹ö] UDP ¼­¹ö ½ÃÀÛµÊ");
+					datagramSocket = new DatagramSocket(50001); // í¬íŠ¸ ë°”ì¸ë”©
+					System.out.println("[ì„œë²„] UDP ì„œë²„ ì‹œì‘ë¨");
 
 					while (true) {
-						DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024); // DatagramPacketÀÇ »çÀÌÁî
-																									// ¼³Á¤
+						DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024); // DatagramPacketì˜ ì‚¬ì´ì¦ˆ
+																									// ì„¤ì •
 						datagramSocket.receive(receivePacket);
 						
 
@@ -48,21 +48,21 @@ public class UDPServerExam {
 							try {
 								String newsKind = new String(receivePacket.getData(), 0, receivePacket.getLength(), "UTF-8");
 
-								SocketAddress socketAddress = receivePacket.getSocketAddress(); // Å¬¶óÀÌ¾ğÆ®ÀÇ ip¿Í Æ÷Æ® get
+								SocketAddress socketAddress = receivePacket.getSocketAddress(); // í´ë¼ì´ì–¸íŠ¸ì˜ ipì™€ í¬íŠ¸ get
 
-								for (int i = 1; i <= 5; i++) { // ´º½º¸¦ Å¬¶óÀÌ¾ğÆ®·Î Àü¼Û(TCP¿Í ´Ş¸® ÀÀ´ä ±â´Ù¸®Áö ¾Ê°í º¸³¿)
-									String data = newsKind + ": ´º½º" + i;
+								for (int i = 1; i <= 5; i++) { // ë‰´ìŠ¤ë¥¼ í´ë¼ì´ì–¸íŠ¸ë¡œ ì „ì†¡(TCPì™€ ë‹¬ë¦¬ ì‘ë‹µ ê¸°ë‹¤ë¦¬ì§€ ì•Šê³  ë³´ëƒ„)
+									String data = newsKind + ": ë‰´ìŠ¤" + i;
 									byte[] bytes = data.getBytes("UTF-8");
 									DatagramPacket sendPacket = new DatagramPacket(bytes, 0, bytes.length, socketAddress);
 									datagramSocket.send(sendPacket);
 								}
 							}catch(Exception e) {
-								System.out.println("[¼­¹ö]: " + e.getMessage());
+								System.out.println("[ì„œë²„]: " + e.getMessage());
 							}
 						});
 					}
 				} catch (Exception e) {
-					System.out.println("[¼­¹ö]: " + e.getMessage());
+					System.out.println("[ì„œë²„]: " + e.getMessage());
 				}
 			}
 		};
@@ -70,7 +70,7 @@ public class UDPServerExam {
 	}
 
 	private static void stop() {
-		datagramSocket.close(); // Æ÷Æ® ¾ğ¹ÙÀÎµù
-		System.out.println("[¼­¹ö] UDP ¼­¹ö Á¾·áµÊ");
+		datagramSocket.close(); // í¬íŠ¸ ì–¸ë°”ì¸ë”©
+		System.out.println("[ì„œë²„] UDP ì„œë²„ ì¢…ë£Œë¨");
 	}
 }

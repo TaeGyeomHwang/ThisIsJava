@@ -9,19 +9,19 @@ public class ClientExam {
 	public static void main(String[] args) {
 		try {
 			Socket socket = new Socket("localhost",50001);
-			System.out.println("[Å¬¶óÀÌ¾ğÆ®] ¿¬°á ¼º°ø");
+			System.out.println("[í´ë¼ì´ì–¸íŠ¸] ì—°ê²° ì„±ê³µ");
 			
-			String semdMessage = "¼­¹ö¿¡°Ô º¸³¾ ¸Ş½ÃÁö";
+			String semdMessage = "ì„œë²„ì—ê²Œ ë³´ë‚¼ ë©”ì‹œì§€";
 			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 			dos.writeUTF(semdMessage);
 			dos.flush();
 			
 			DataInputStream dis = new DataInputStream(socket.getInputStream());
 			String receiveMessage = dis.readUTF();
-			System.out.println("¼­¹ö·ÎºÎÅÍ ¹ŞÀº ¸Ş½ÃÁö: "+receiveMessage);
+			System.out.println("ì„œë²„ë¡œë¶€í„° ë°›ì€ ë©”ì‹œì§€: "+receiveMessage);
 			
 			socket.close();
-			System.out.println("[Å¬¶óÀÌ¾ğÆ®] ¿¬°á ²÷À½");
+			System.out.println("[í´ë¼ì´ì–¸íŠ¸] ì—°ê²° ëŠìŒ");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

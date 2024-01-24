@@ -11,11 +11,11 @@ public class DataIOStreamExam {
 		try {
 			FileOutputStream fos = new FileOutputStream("C:/Temp2/test3.txt");
 			DataOutputStream dos = new DataOutputStream(fos);
-			dos.writeUTF("È«±æµ¿");
+			dos.writeUTF("í™ê¸¸ë™");
 			dos.writeDouble(95.5);
 			dos.writeInt(1);
 
-			dos.writeUTF("±èÀÚ¹Ù");
+			dos.writeUTF("ê¹€ìë°”");
 			dos.writeDouble(90.5);
 			dos.writeInt(2);
 

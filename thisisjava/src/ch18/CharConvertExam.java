@@ -15,16 +15,16 @@ public class CharConvertExam {
 			OutputStream os = new FileOutputStream("C:/Temp2/test3.txt");
 			Writer writer = new OutputStreamWriter(os, "UTF-8");
 
-			writer.write("¹®ÀÚ º¯È¯ ½ºÆ®¸²À» »ç¿ëÇÕ´Ï´Ù.");
+			writer.write("ë¬¸ì ë³€í™˜ ìŠ¤íŠ¸ë¦¼ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.");
 			writer.flush();
 			writer.close();
 
-			FileInputStream is = new FileInputStream("C:/Temp2/test3.txt"); // ±âº» ¹ÙÀÌÆ® ÀÔ·Â ½ºÆ®¸²
-			Reader reader = new InputStreamReader(is, "UTF-8"); // Reader·Î º¯È¯ÇØÁÖ´Â º¸Á¶½ºÆ®¸²
+			FileInputStream is = new FileInputStream("C:/Temp2/test3.txt"); // ê¸°ë³¸ ë°”ì´íŠ¸ ì…ë ¥ ìŠ¤íŠ¸ë¦¼
+			Reader reader = new InputStreamReader(is, "UTF-8"); // Readerë¡œ ë³€í™˜í•´ì£¼ëŠ” ë³´ì¡°ìŠ¤íŠ¸ë¦¼
 
 			char[] data = new char[100];
-			int num = reader.read(data); // ¹è¿­ ¿ë·®¸¸Å­ µ¥ÀÌÅÍ ÀĞ¾î¿À°í, ÀĞ¾î¿Â µ¥ÀÌÅÍ ¼ö¸¦ ¸®ÅÏ
-			String str = new String(data, 0, num);	//	¹®ÀÚ ¹è¿­ÀÇ ¿ÀÇÁ¼Â(data)¿¡¼­ ±æÀÌ¸¸Å­ ¹®ÀÚ·Î »ı¼º
+			int num = reader.read(data); // ë°°ì—´ ìš©ëŸ‰ë§Œí¼ ë°ì´í„° ì½ì–´ì˜¤ê³ , ì½ì–´ì˜¨ ë°ì´í„° ìˆ˜ë¥¼ ë¦¬í„´
+			String str = new String(data, 0, num);	//	ë¬¸ì ë°°ì—´ì˜ ì˜¤í”„ì…‹(data)ì—ì„œ ê¸¸ì´ë§Œí¼ ë¬¸ìë¡œ ìƒì„±
 			System.out.println(str);
 			
 
