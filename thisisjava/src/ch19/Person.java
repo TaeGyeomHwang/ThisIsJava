@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 public class Person {
 	private String id;
 	private String name;
-	private String age;
-	private String student;
+	private int age;
+	private boolean student;
 	private Tel tel;
 	private String[] skill;
 	

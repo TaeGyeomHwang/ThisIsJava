@@ -17,9 +17,6 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import ch19.Person;
-import ch19.Tel;
-
 public class MainProcess {
 
 	private static final Scanner scan = new Scanner(System.in);
