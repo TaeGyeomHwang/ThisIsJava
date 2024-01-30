@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -45,63 +46,115 @@ public class ViewDialog extends JDialog {
 		this.getContentPane().add(getPSouth(), BorderLayout.SOUTH);
 		this.setBoard();
 	}
-	
+	//텍스트 필드 부착 패널 생성
 	public JPanel getPCenter() {
 		if(pCenter==null) {
-			/*코드 추가*/
+			pCenter = new JPanel();
+			pCenter.add(getPTitle());
+			pCenter.add(getPWriter());
+			pCenter.add(getPContent());
 		}
 		return pCenter;
 	}
-	
+	//제목 패널, 텍스트 필드 생성
 	public JPanel getPTitle() {
 		if(pTitle==null) {
-			/*코드 추가*/
+			pTitle = new JPanel();
+			JLabel label = new JLabel("제목");
+			label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 10));
+			pTitle.add(label);
+			BoardDTO board = BoardDAO.getInstance().getBoardByBno(bno);
+			if (txtTitle == null) {
+				txtTitle = new JTextField(30);
+				txtTitle.setText(board.getTitle());
+			}
+			pTitle.add(txtTitle);
 		}
 		return pTitle;
 	}	
-	
+	//글쓴이 패널, 텍스트 필드 생성
 	public JPanel getPWriter() {
 		if(pWriter==null) {
-			/*코드 추가*/
+			pWriter = new JPanel();
+			JLabel label = new JLabel("글쓴이");
+			pWriter.add(label);
+			BoardDTO board = BoardDAO.getInstance().getBoardByBno(bno);
+			if (txtWriter == null) {
+				txtWriter = new JTextField(30);
+				txtWriter.setText(board.getWriter());;
+			}
+			pWriter.add(txtWriter);
 		}
 		return pWriter;
 	}		
-	
+	//내용 패널, 텍스트 필드 생성
 	public JPanel getPContent() {
 		if(pContent == null) {
-			/*코드 추가*/
+			pContent = new JPanel();
+			JLabel label = new JLabel("내용");
+			label.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 10));
+			pContent.add(label);
+			BoardDTO board = BoardDAO.getInstance().getBoardByBno(bno);
+			if (txtContent == null) {
+				txtContent = new JTextArea(10, 30);
+				txtContent.setText(board.getContent());
+			}
+			pContent.add(txtContent);
 		}
 		return pContent;
 	}
-
+	//버튼 부착 패널 생성
 	public JPanel getPSouth() {
 		if(pSouth == null) {
-			/*코드 추가*/
+			pSouth = new JPanel();
+			pSouth.add(getBtnUpdate());
+			pSouth.add(getBtnDelete());
+			pSouth.add(getBtnClose());
 		}
 		return pSouth;
 	}
-	
+	//다이얼로그 활성화 시 조회수 증가
 	public void setBoard() {
-		/*코드 추가*/
+		BoardDTO board = BoardDAO.getInstance().getBoardByBno(bno);
+		int hitcount = board.getHitcount()+1;
+		BoardDAO.getInstance().addHitcount(hitcount, bno);
 	}
-	
+	//수정 버튼 생성
 	public JButton getBtnUpdate() {
 		if(btnUpdate == null) {
-			/*코드 추가*/
+			btnUpdate = new JButton();
+			btnUpdate.setText("수정");
+			btnUpdate.addActionListener(e->{
+				BoardDTO board = new BoardDTO();
+				board.setTitle(txtTitle.getText());
+				board.setWriter(txtWriter.getText());
+				board.setContent(txtContent.getText());
+				BoardDAO.getInstance().updateBoard(board, bno);
+				dispose();
+			});
 		}
 		return btnUpdate;
 	}
-	
+	//삭제 버튼 생성
 	public JButton getBtnDelete() {
 		if(btnDelete == null) {
-			/*코드 추가*/
+			btnDelete = new JButton();
+			btnDelete.setText("삭제");
+			btnDelete.addActionListener(e->{
+				BoardDAO.getInstance().deleteBoard(bno);
+				dispose();
+			});
 		}
 		return btnDelete;
 	}	
-	
+	//닫기 버튼 생성
 	public JButton getBtnClose() {
 		if(btnClose == null) {
-			/*코드 추가*/
+			btnClose = new JButton();
+			btnClose.setText("닫기");
+			btnClose.addActionListener(e->{
+				dispose();
+			});
 		}
 		return btnClose;
 	}	

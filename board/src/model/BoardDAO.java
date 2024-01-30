@@ -59,8 +59,8 @@ public class BoardDAO {
 			// conn으로부터 pstmt(sql) 받기
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getTitle());
-			pstmt.setString(2, board.getContent());
-			pstmt.setString(3, board.getWriter());
+			pstmt.setString(2, board.getWriter());
+			pstmt.setString(3, board.getContent());
 			// execute 호출
 			pstmt.executeUpdate();
 			close();
@@ -68,11 +68,12 @@ public class BoardDAO {
 	}
 
 	public BoardDTO getBoardByBno(int bno) { // 게시글 하나만 받아옴
+		BoardDTO board = new BoardDTO();
 		try {
 			connect();
 			// sql에 쿼리 입력
 			sql = """
-					select bno, btitle, bcontent, bwriter, bdate
+					select btitle, bcontent, bwriter, bhitcount
 					from boards
 					where bno=?;
 					""";
@@ -81,32 +82,108 @@ public class BoardDAO {
 			pstmt.setInt(1, bno);
 			// execute 호출
 			ResultSet rs = pstmt.executeQuery();
-			
-			BoardDTO board = new BoardDTO();
-			board.setBno(rs.getInt("bno"));
-			board.setTitle(rs.getString("title"));
-			board.setContent(rs.getString("bcontent"));
-			board.setWriter(rs.getString("bwriter"));
-			board.setRegdate(rs.getDate("bdate"));
+			while(rs.next()) {
+				board.setTitle(rs.getString("btitle"));
+				board.setContent(rs.getString("bcontent"));
+				board.setWriter(rs.getString("bwriter"));
+				board.setHitcount(rs.getInt("bhitcount"));
+			}
 			close();
-		} catch (Exception e) {}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return board;
 	}
 
 	public List<BoardDTO> getBoards() { // 게시글 전체 가져오기
-		return null;
-
+		List<BoardDTO> boardList = new ArrayList<>();
+		try {
+			connect();
+			// sql에 쿼리 입력
+			sql = """
+					select bno, btitle, bcontent, bwriter, bdate, bhitcount
+					from boards
+					order by bno;
+					""";
+			// conn으로부터 pstmt(sql) 받기
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			// execute 호출
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardDTO board = new BoardDTO();
+				board.setBno(rs.getInt("bno"));
+				board.setTitle(rs.getString("btitle"));
+				board.setContent(rs.getString("bcontent"));
+				board.setWriter(rs.getString("bwriter"));
+				board.setRegdate(rs.getDate("bdate"));
+				board.setHitcount(rs.getInt("bhitcount"));
+				boardList.add(board);
+			}
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return boardList;
 	}
 
-	public void updateBoard(BoardDTO board, int bno) {
-
+	public void updateBoard(BoardDTO board, int bno) {	// 게시글 수정
+		try {
+			connect();
+			String sql = """
+					update boards set btitle=?, bcontent=?, bwriter=?
+					where bno=?
+					""";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContent());
+			pstmt.setString(3, board.getWriter());
+			pstmt.setInt(4, bno);
+			pstmt.executeUpdate();
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void deleteBoard(int bno) {
-
+		try {
+			connect();
+			String sql = "delete from boards where bno=?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bno);
+			pstmt.executeUpdate();
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void addHitcount(int hitcount, int bno) {
-
+		try {
+			connect();
+			String sql = """
+					update boards set bhitcount=?
+					where bno=?
+					""";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, hitcount);
+			pstmt.setInt(2, bno);
+			pstmt.executeUpdate();
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void truncateBoard() {
+		try {
+			connect();
+			String sql = "truncate table boards";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.executeUpdate();
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
