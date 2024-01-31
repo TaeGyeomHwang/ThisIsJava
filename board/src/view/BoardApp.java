@@ -15,11 +15,14 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.RowSorter;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 import model.BoardDAO;
 import model.BoardDTO;
@@ -80,6 +83,9 @@ public class BoardApp extends JFrame {
 			jTable.getColumn("조회수").setPreferredWidth(5);
 			// jTable 컬럼 이동 금지
 			jTable.getTableHeader().setReorderingAllowed(false);
+			// 컬럼 클릭시 해당 컬럼 기준으로 정렬
+			 RowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tableModel);
+			 jTable.setRowSorter(sorter);
 			// 열 클릭 시 마우스 이벤트 처리
 			jTable.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
