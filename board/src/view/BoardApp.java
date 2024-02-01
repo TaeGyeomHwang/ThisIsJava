@@ -84,8 +84,8 @@ public class BoardApp extends JFrame {
 			// jTable 컬럼 이동 금지
 			jTable.getTableHeader().setReorderingAllowed(false);
 			// 컬럼 클릭시 해당 컬럼 기준으로 정렬
-			 RowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tableModel);
-			 jTable.setRowSorter(sorter);
+			RowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tableModel);
+			jTable.setRowSorter(sorter);
 			// 열 클릭 시 마우스 이벤트 처리
 			jTable.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
@@ -145,17 +145,17 @@ public class BoardApp extends JFrame {
 		}
 		return txtSearch;
 	}
-	
+
 	// 검색 버튼 생성
 	public JButton getBtnSearch() {
-		if(btnSearch== null) {
+		if (btnSearch == null) {
 			btnSearch = new JButton();
 			btnSearch.setText("검색");
-			btnSearch.addActionListener(e->{
-				String field = (String)cbxFilter.getSelectedItem();
+			btnSearch.addActionListener(e -> {
+				String field = (String) cbxFilter.getSelectedItem();
 				String word = txtSearch.getText();
 				// 제목으로 검색
-				if(field.equals("제목")) {
+				if (field.equals("제목")) {
 					final DefaultTableModel tableModel = (DefaultTableModel) jTable.getModel();
 					// 기존 행 지우기
 					tableModel.setNumRows(0);
@@ -163,15 +163,15 @@ public class BoardApp extends JFrame {
 					List<BoardDTO> boardList = BoardDAO.getInstance().getBoards();
 					for (int i = 0; i < boardList.size(); i++) {
 						BoardDTO board = boardList.get(i);
-						if(board.getTitle().contains(word)) {
-							Object[] rowData = { board.getBno(), board.getTitle(), board.getWriter(), board.getRegdate(),
-									board.getHitcount() };
+						if (board.getTitle().contains(word)) {
+							Object[] rowData = { board.getBno(), board.getTitle(), board.getWriter(),
+									board.getRegdate(), board.getHitcount() };
 							tableModel.addRow(rowData);
 						}
 					}
 				}
 				// 글쓴이로 검색
-				else if(field.equals("글쓴이")) {
+				else if (field.equals("글쓴이")) {
 					final DefaultTableModel tableModel = (DefaultTableModel) jTable.getModel();
 					// 기존 행 지우기
 					tableModel.setNumRows(0);
@@ -179,9 +179,9 @@ public class BoardApp extends JFrame {
 					List<BoardDTO> boardList = BoardDAO.getInstance().getBoards();
 					for (int i = 0; i < boardList.size(); i++) {
 						BoardDTO board = boardList.get(i);
-						if(board.getWriter().contains(word)) {
-							Object[] rowData = { board.getBno(), board.getTitle(), board.getWriter(), board.getRegdate(),
-									board.getHitcount() };
+						if (board.getWriter().contains(word)) {
+							Object[] rowData = { board.getBno(), board.getTitle(), board.getWriter(),
+									board.getRegdate(), board.getHitcount() };
 							tableModel.addRow(rowData);
 						}
 					}
@@ -190,13 +190,13 @@ public class BoardApp extends JFrame {
 		}
 		return btnSearch;
 	}
-	
+
 	// 검색 초기화 버튼 생성
 	public JButton getBtnReset() {
-		if(btnReset== null) {
+		if (btnReset == null) {
 			btnReset = new JButton();
 			btnReset.setText("초기화");
-			btnReset.addActionListener(e->{
+			btnReset.addActionListener(e -> {
 				// 검색 조건과 텍스트 필드 초기화
 				txtSearch.setText("");
 				cbxFilter.setSelectedItem("제목");
@@ -230,10 +230,10 @@ public class BoardApp extends JFrame {
 		}
 		return btnInsert;
 	}
-	
+
 	// 게시글 전체 삭제 버튼
 	public JButton getBtnTruncate() {
-		if(btnTruncate == null) {
+		if (btnTruncate == null) {
 			btnTruncate = new JButton();
 			btnTruncate.setText("전체 삭제");
 			btnTruncate.addActionListener(e -> {
